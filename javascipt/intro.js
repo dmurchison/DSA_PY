@@ -1,24 +1,9 @@
-// Hey Programmer
-// Write a function greet that takes in a string argument, s, and returns the string "hey s". No tricks here. Run the tests to check your work.
-
-const greet = (s) => {
-  // todo
-  return "hey " + s; 
-};
-
-console.log(greet("alvin")); // -> 'hey alvin'
-console.log(greet("jason")); // -> 'hey jason'
-console.log(greet("how now brown cow")); // -> 'hey how now brown cow'
-
-
-
 // Max Value
 // Write a function, maxValue, that takes in array of numbers as an argument. The function should return the largest number in the array.
 // Solve this without using any built-in array methods.
 // You can assume that the array is non-empty.
 
 const maxValue = (nums) => {
-  // todo
   let max = -Infinity; // -Infinity is guaranteed to always be smaller than any other number
   for (let num of nums) { // (for of) loop will iterate through every element of an array, NOT the indeces
     if (num > max) {
@@ -49,7 +34,7 @@ const isPrime = (n) => {
   for (let i = 2; i < n; i++) { // iterate from 2 up to n (no reason to check 1 or n)
     if (n % i === 0) return false; // if the number is divisible by any number between 2 and itself, return false
   }
-  return true; // once the iteration is complete and false has still not been returned, we can finally return true
+  return true; // once the iteration is complete and false has still not been returned, we can finally return true/
 };
 
 console.log(isPrime(2)); // -> true
@@ -65,11 +50,4 @@ console.log(isPrime(2017)); // -> true
 console.log(isPrime(2048)); // -> false
 console.log(isPrime(1)); // -> false
 console.log(isPrime(713)); // -> false
-
-
-
-
-
-
-
 
