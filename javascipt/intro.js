@@ -1,3 +1,10 @@
+const greet = (s) => {
+  return 'hey ' + s;
+}
+
+console.log(greet("Duncan")); // -> "hey Duncan"
+
+
 // Max Value
 // Write a function, maxValue, that takes in array of numbers as an argument. The function should return the largest number in the array.
 // Solve this without using any built-in array methods.
