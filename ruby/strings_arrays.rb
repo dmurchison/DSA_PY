@@ -1,0 +1,3 @@
+def uncompress(s)
+  
+end
