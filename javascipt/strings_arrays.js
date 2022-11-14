@@ -24,11 +24,13 @@ const uncompress = (s) => {
   return result.join(''); // once the while loop is done, turn the result back into a string and return it
 };
 
+console.log('UNCOMPRESS');
 console.log(uncompress("2c3a1t")); // -> 'ccaaat'
 console.log(uncompress("4s2b")); // -> 'ssssbb'
 console.log(uncompress("2p1o5p")); // -> 'ppoppppp'
 console.log(uncompress("3n12e2z")); // -> 'nnneeeeeeeeeeeezz'
 console.log(uncompress("127y")); // ->'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+console.log('-------');
 
 
 // COMPRESS
@@ -36,6 +38,35 @@ console.log(uncompress("127y")); // ->'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 // The function should return a compressed version of the string where consecutive occurrences 
 // of the same characters are compressed into the number of occurrences followed by the character. 
 // Single character occurrences should not be changed.
+
+const compress = (s) => {
+  // todo
+  let result = [];
+  let i = 0;
+  let j = 0;
+  while (j <= s.length) {
+    if (s[i] === s[j]) {
+      j ++;
+    } else {
+      const count = j - i;
+      if (count === 1) {
+        result.push(s[i]);
+      } else {
+        result.push(count, s[i]); 
+      }
+      i = j;
+    }
+  }
+  return result.join('');
+};
+
+console.log('COMPRESS');
+console.log(compress('ccaaatsss')); // -> '2c3at3s'
+console.log(compress('ssssbbz')); // -> '4s2bz'
+console.log(compress('ppoppppp')); // -> '2po5p';
+console.log(compress('nnneeeeeeeeeeeezz')); // -> '3n12e2z'
+console.log(compress('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy')); // -> '127y'
+console.log('-------');
 
 
 
