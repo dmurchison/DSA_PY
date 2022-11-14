@@ -1,11 +1,9 @@
-
+# UNCOMPRESS
 # Write a function, uncompress, that takes in a string as an argument. 
-# The input string will be formatted into multiple groups according to the following pattern:
-# <number><char>
-# for example, '2c' or '3a'.
+# The input string will be formatted into multiple groups according to the following pattern: <number><char> for example, '2c' or '3a'.
 # The function should return an uncompressed version of the string where each 'char' of a group is repeated 'number' times consecutively. 
 # You may assume that the input string is well-formed according to the previously mentioned pattern.
-# 2 POINTER METHOD
+
 def uncompress(s)
   result = [] # setup array for the final result to be joined at the end of the end of the function
   numbers = '0123456789' # numbers string to test with the .include? method
@@ -30,3 +28,69 @@ p uncompress("4s2b") # -> 'ssssbb'
 p uncompress("2p1o5p") # -> 'ppoppppp'
 p uncompress("3n12e2z") # -> 'nnneeeeeeeeeeeezz'
 p uncompress("127y") # -> 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+
+# COMPRESS
+# Write a function, compress, that takes in a string as an argument. 
+# The function should return a compressed version of the string where consecutive occurrences 
+# of the same characters are compressed into the number of occurrences followed by the character. 
+# Single character occurrences should not be changed.
+
+def compress(s)
+  result = [];
+  i = 0;
+  j = 0;
+  while j <= s.length
+    if s[i] == s[j]
+      j += 1
+    else
+      count = j - i
+      if count == 1
+        result.push(s[i])
+      else
+        result.push(count, s[i])
+      end
+      i = j
+    end
+  end
+  return result.join('')
+end
+
+p compress('ccaaatsss') # -> '2c3at3s'
+p compress('ssssbbz') # -> '4s2bz'
+p compress('ppoppppp') # -> '2po5p'
+p compress('nnneeeeeeeeeeeezz') # -> '3n12e2z'
+p compress('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'); # -> '127y'
+
+
+
+# ANAGRAMS
+# Write a function, anagrams, that takes in two strings as arguments. 
+# The function should return a boolean indicating whether or not the strings are anagrams. 
+# Anagrams are strings that contain the same characters, but in any order.
+
+def anagrams(s1, s2)
+  return char_counter(s1) == char_counter(s2)
+end
+
+def char_counter(s)
+  count = Hash.new(0)
+  s.each_char do |el|
+    count[el] += 1
+  end
+  return count
+end
+
+p anagrams('restful', 'fluster') # -> True
+p anagrams('cats', 'tocs') # -> False
+p anagrams('monkeyswrite', 'newyorktimes') # -> True
+p anagrams('paper', 'reapa') # -> False
+p anagrams('elbow', 'below') # -> True
+p anagrams('tax', 'taxi') # -> False
+p anagrams('taxi', 'tax') # -> False
+p anagrams('night', 'thing') # -> True
+p anagrams('abbc', 'aabc') # -> False
+p anagrams('po', 'popp') # -> False
+p anagrams('pp', 'oo') # -> False
+
+
+
