@@ -1,3 +1,4 @@
+// UNCOMPRESS
 // Write a function, uncompress, that takes in a string as an argument. 
 // The input string will be formatted into multiple groups according to the following pattern: <number><char> for example, '2c' or '3a'.
 // The function should return an uncompressed version of the string where each 'char' of a group is repeated 'number' times consecutively. 
@@ -28,5 +29,13 @@ console.log(uncompress("4s2b")); // -> 'ssssbb'
 console.log(uncompress("2p1o5p")); // -> 'ppoppppp'
 console.log(uncompress("3n12e2z")); // -> 'nnneeeeeeeeeeeezz'
 console.log(uncompress("127y")); // ->'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+
+
+// COMPRESS
+// Write a function, compress, that takes in a string as an argument. 
+// The function should return a compressed version of the string where consecutive occurrences 
+// of the same characters are compressed into the number of occurrences followed by the character. 
+// Single character occurrences should not be changed.
+
 
 
