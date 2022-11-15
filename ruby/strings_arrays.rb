@@ -29,6 +29,9 @@ p uncompress("2p1o5p") # -> 'ppoppppp'
 p uncompress("3n12e2z") # -> 'nnneeeeeeeeeeeezz'
 p uncompress("127y") # -> 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
 
+
+
+
 # COMPRESS
 # Write a function, compress, that takes in a string as an argument. 
 # The function should return a compressed version of the string where consecutive occurrences 
@@ -60,6 +63,7 @@ p compress('ssssbbz') # -> '4s2bz'
 p compress('ppoppppp') # -> '2po5p'
 p compress('nnneeeeeeeeeeeezz') # -> '3n12e2z'
 p compress('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'); # -> '127y'
+
 
 
 
