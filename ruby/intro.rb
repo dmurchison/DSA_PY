@@ -12,9 +12,7 @@ p max_value([4,7,2,8,10,9]) # -> 10
 
 def is_prime(n)
   return false if n < 2
-  (2...n).each do |i|
-    return false if n % i == 0
-  end
+  (2...n).each { |el| return false if n % el == 0 }
   return true
 end
 
