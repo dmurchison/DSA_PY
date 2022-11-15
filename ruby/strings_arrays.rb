@@ -100,4 +100,18 @@ p anagrams('pp', 'oo') # -> False
 # The function should return the most frequent character of the string. 
 # If there are ties, return the character that appears earlier in the string.
 
+def most_frequent_char(s)
+  hash = Hash.new(0)
+  s.each_char do |el|
+    hash[el] += 1
+  end
+  hash.max_by{ |k,v| v }[0]
+end
 
+p most_frequent_char('bookeeper') # -> 'e'
+p most_frequent_char('david') # -> 'd'
+p most_frequent_char('abby') # -> 'b'
+p most_frequent_char('mississippi') # -> 'i'
+p most_frequent_char('potato') # -> 'o'
+p most_frequent_char('eleventennine') # -> 'e'
+p most_frequent_char('riverbed') # -> 'r'
