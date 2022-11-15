@@ -96,6 +96,13 @@ const anagrams = (s1, s2) => {
   return true;
 };
 
+console.log(anagrams('restful', 'fluster')); // -> true
+console.log(anagrams('cats', 'tocs')); // -> false
+console.log(anagrams('monkeyswrite', 'newyorktimes')); // -> true
+console.log(anagrams('paper', 'reapa')); // -> false
+console.log(anagrams('elbow', 'below')); // -> true
+console.log(anagrams('tax', 'taxi')); // -> false
+console.log(anagrams('taxi', 'tax')); // -> false
 
 
 
