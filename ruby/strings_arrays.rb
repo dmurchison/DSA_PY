@@ -23,7 +23,7 @@ def uncompress(s)
   return result.join('') # join the result together and return it!
 end
 
-
+# UNCOMPRESS2
 def uncompress2(s)
   result = []
   numbers = '0123456789'
@@ -76,7 +76,7 @@ def compress(s)
   return result.join('')
 end
 
-
+# COMPRESS2
 def compress2(s)
   result = []
   i = 0
