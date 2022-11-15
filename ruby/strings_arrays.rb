@@ -156,7 +156,7 @@ def most_frequent_char(s)
   s.each_char do |el|
     hash[el] += 1
   end
-  hash.max_by{ |k,v| v }[0]
+  hash.max_by{ |k,v| v }
 end
 
 
