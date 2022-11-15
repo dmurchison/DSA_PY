@@ -119,17 +119,29 @@ def char_counter(s)
   return count
 end
 
-p anagrams('restful', 'fluster') # -> True
-p anagrams('cats', 'tocs') # -> False
-p anagrams('monkeyswrite', 'newyorktimes') # -> True
-p anagrams('paper', 'reapa') # -> False
-p anagrams('elbow', 'below') # -> True
-p anagrams('tax', 'taxi') # -> False
-p anagrams('taxi', 'tax') # -> False
-p anagrams('night', 'thing') # -> True
-p anagrams('abbc', 'aabc') # -> False
-p anagrams('po', 'popp') # -> False
-p anagrams('pp', 'oo') # -> False
+
+# ANAGRAMS2
+def anagrams2(s1, s2)
+  return char_counter2(s1) == char_counter2(s2)
+end
+
+def char_counter2(s)
+  hash = Hash.new(0)
+  s.each_char { |el| hash[el] += 1 }
+  return hash
+end
+
+p anagrams2('restful', 'fluster') # -> True
+p anagrams2('cats', 'tocs') # -> False
+p anagrams2('monkeyswrite', 'newyorktimes') # -> True
+p anagrams2('paper', 'reapa') # -> False
+p anagrams2('elbow', 'below') # -> True
+p anagrams2('tax', 'taxi') # -> False
+p anagrams2('taxi', 'tax') # -> False
+p anagrams2('night', 'thing') # -> True
+p anagrams2('abbc', 'aabc') # -> False
+p anagrams2('po', 'popp') # -> False
+p anagrams2('pp', 'oo') # -> False
 
 
 
@@ -146,6 +158,8 @@ def most_frequent_char(s)
   end
   hash.max_by{ |k,v| v }[0]
 end
+
+
 
 p most_frequent_char('bookeeper') # -> 'e'
 p most_frequent_char('david') # -> 'd'
