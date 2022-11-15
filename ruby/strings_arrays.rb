@@ -23,11 +23,29 @@ def uncompress(s)
   return result.join('') # join the result together and return it!
 end
 
+
+def uncompress2(s)
+  result = []
+  numbers = '0123456789'
+  i = 0
+  j = 0
+  while j < s.length
+    if numbers.include?(s[j])
+      j += 1
+    else
+      s[i, j].to_i.times { result.push(s[j]) }
+      j += 1
+      i = j
+    end
+  end
+  return result.join('')
+end
+
 p uncompress("2c3a1t") # -> 'ccaaat'
 p uncompress("4s2b") # -> 'ssssbb'
 p uncompress("2p1o5p") # -> 'ppoppppp'
 p uncompress("3n12e2z") # -> 'nnneeeeeeeeeeeezz'
-p uncompress("127y") # -> 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+p uncompress2("127y") # -> 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
 
 
 
@@ -58,11 +76,28 @@ def compress(s)
   return result.join('')
 end
 
-p compress('ccaaatsss') # -> '2c3at3s'
-p compress('ssssbbz') # -> '4s2bz'
-p compress('ppoppppp') # -> '2po5p'
-p compress('nnneeeeeeeeeeeezz') # -> '3n12e2z'
-p compress('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'); # -> '127y'
+
+def compress2(s)
+  result = []
+  i = 0
+  j = 0
+  while j <= s.length
+    if s[i] == s[j]
+      j += 1
+    else
+      count = j - i
+      result.push(count.to_s, s[i])
+      i = j
+    end
+  end
+  return result.join('')
+end
+
+p compress2('ccaaatsss') # -> '2c3at3s'
+p compress2('ssssbbz') # -> '4s2bz'
+p compress2('ppoppppp') # -> '2po5p'
+p compress2('nnneeeeeeeeeeeezz') # -> '3n12e2z'
+p compress2('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'); # -> '127y'
 
 
 
