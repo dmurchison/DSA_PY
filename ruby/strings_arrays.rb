@@ -17,8 +17,7 @@ def uncompress(s)
       res.times { result.push(s[j]) } # That number amount of times, push the letter (currently s[j]) into the result array created at the beginning of the function
       j += 1
       i = j
-      # concat j again and bring i up to speed
-    end
+    end # concat j again and bring i up to speed
   end
   return result.join('') # join the result together and return it!
 end
@@ -41,11 +40,14 @@ def uncompress2(s)
   return result.join('')
 end
 
+p 'UNCOMPRESS'
 p uncompress("2c3a1t") # -> 'ccaaat'
 p uncompress("4s2b") # -> 'ssssbb'
 p uncompress("2p1o5p") # -> 'ppoppppp'
 p uncompress("3n12e2z") # -> 'nnneeeeeeeeeeeezz'
 p uncompress2("127y") # -> 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+puts
+
 
 
 
@@ -93,11 +95,14 @@ def compress2(s)
   return result.join('')
 end
 
+p 'COMPRESS'
 p compress2('ccaaatsss') # -> '2c3at3s'
 p compress2('ssssbbz') # -> '4s2bz'
 p compress2('ppoppppp') # -> '2po5p'
 p compress2('nnneeeeeeeeeeeezz') # -> '3n12e2z'
 p compress2('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'); # -> '127y'
+puts
+
 
 
 
@@ -110,7 +115,7 @@ p compress2('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 def anagrams(s1, s2)
   return char_counter(s1) == char_counter(s2)
 end
-
+# helper
 def char_counter(s)
   count = Hash.new(0)
   s.each_char do |el|
@@ -119,18 +124,18 @@ def char_counter(s)
   return count
 end
 
-
 # ANAGRAMS2
 def anagrams2(s1, s2)
   return char_counter2(s1) == char_counter2(s2)
 end
-
+# helper
 def char_counter2(s)
   hash = Hash.new(0)
   s.each_char { |el| hash[el] += 1 }
   return hash
 end
 
+p 'ANAGRAMS'
 p anagrams2('restful', 'fluster') # -> True
 p anagrams2('cats', 'tocs') # -> False
 p anagrams2('monkeyswrite', 'newyorktimes') # -> True
@@ -142,6 +147,8 @@ p anagrams2('night', 'thing') # -> True
 p anagrams2('abbc', 'aabc') # -> False
 p anagrams2('po', 'popp') # -> False
 p anagrams2('pp', 'oo') # -> False
+puts
+
 
 
 
@@ -159,6 +166,7 @@ def most_frequent_char(s)
   hash.max_by{ |k,v| v }[0]
 end
 
+p 'MOST FREQUENT CHAR'
 p most_frequent_char('bookeeper') # -> 'e'
 p most_frequent_char('david') # -> 'd'
 p most_frequent_char('abby') # -> 'b'
@@ -166,6 +174,8 @@ p most_frequent_char('mississippi') # -> 'i'
 p most_frequent_char('potato') # -> 'o'
 p most_frequent_char('eleventennine') # -> 'e'
 p most_frequent_char('riverbed') # -> 'r'
+puts
+
 
 
 
@@ -188,9 +198,49 @@ def pair_sum(numbers, target_sum)
   return nil
 end
 
+p 'PAIR SUM'
 p pair_sum([3, 2, 5, 4, 1], 8) # -> (0, 2)
 p pair_sum([4, 7, 9, 2, 5, 1], 5) # -> (0, 5)
 p pair_sum([4, 7, 9, 2, 5, 1], 3) # -> (3, 5)
 p pair_sum([1, 6, 7, 2], 13) # -> (1, 2)
 p pair_sum([9, 9], 18) # -> (0, 1)
 p pair_sum([6, 4, 2, 8 ], 12) # -> (1, 3)
+puts
+
+
+
+
+
+# PAIR PRODUCT
+# Write a function, pair_product, that takes in a list and a target product as arguments. 
+# The function should return a tuple containing a pair of indices whose elements multiply to the given target. 
+# The indices returned must be unique.
+
+# Be sure to return the indices, not the elements themselves.
+# There is guaranteed to be one such pair whose product is the target.
+
+def pair_product(numbers, target_product)
+  numbers.each_with_index do |el1, idx1|
+    numbers.each_with_index do |el2, idx2|
+      return [idx1, idx2] if idx1 < idx2 && el1 * el2 == target_product
+    end
+  end
+  return nil
+end
+
+p 'PAIR PRODUCT'
+p pair_product([3, 2, 5, 4, 1], 8) # -> (1, 3)
+p pair_product([3, 2, 5, 4, 1], 10) # -> (1, 2)
+p pair_product([4, 7, 9, 2, 5, 1], 5) # -> (4, 5)
+p pair_product([4, 7, 9, 2, 5, 1], 35) # -> (1, 4)
+p pair_product([3, 2, 5, 4, 1], 10) # -> (1, 2)
+p pair_product([4, 6, 8, 2], 16) # -> (2, 3)
+puts
+
+
+
+
+
+
+
+
