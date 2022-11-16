@@ -1,4 +1,3 @@
-require 'set'
 # UNCOMPRESS
 # Write a function, uncompress, that takes in a string as an argument. 
 # The input string will be formatted into multiple groups according to the following pattern: <number><char> for example, '2c' or '3a'.
@@ -246,20 +245,10 @@ puts
 # Write a function, intersection, that takes in two lists, a,b, as arguments. 
 # The function should return a new list containing elements that are in both of the two lists.
 # You may assume that each input list does not contain duplicate elements.
-
-def intersection(list1, list2)
-  result = []
-  list1.each do |el|
-    if list2.include?(el)
-      result.push(el)
-    end
-  end
-  return result.sort
-end
+require 'set'
 
 def intersection2(list1, list2)
-  s1 = Set.new(list1)
-  list2.select { |el| s1.include?(el) }
+  Set.new(list1) & Set.new(list2)
 end
 
 p 'INTERSECTION'
@@ -269,7 +258,7 @@ p intersection2([4,2,1], [1,2,4,6]) # -> [1,2,4]
 p intersection2([0,1,2], [10,11]) # -> []
 a = Array (0..5000)
 b = Array (0..5000)
-p intersection(a, b) # -> [0,1,2,3,..., 4999]
+p intersection2(a, b) # -> [0,1,2,3,..., 4999]
 puts
 
 
@@ -287,10 +276,19 @@ puts
 # 
 
 def five_sort(nums)
-  nums.each_with_index do |el, i|
-    i = -1 if el == 5
+  i = 0
+  j = nums.length - 1
+  while i < j
+    if nums[j] == 5
+      j -= 1
+    elsif nums[i] == 5
+      nums[i], nums[j] = nums[j], nums[i]
+      i += 1
+    else
+      i += 1
+    end
   end
-  nums
+  return nums
 end
 
 p 'FIVE SORT'
