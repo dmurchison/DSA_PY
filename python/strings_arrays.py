@@ -1,7 +1,5 @@
-def uncompress(s):
-  result = []
-  i = 0
-  j = 0
-  while j < s.length:
-    
-  
+a = [ i for i in range(0, 50000) ]
+b = [ i for i in range(0, 50000) ]
+
+print(a)
+# print(b)

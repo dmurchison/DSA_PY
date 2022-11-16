@@ -241,6 +241,65 @@ puts
 
 
 
+# INTERSECTION
+# Write a function, intersection, that takes in two lists, a,b, as arguments. 
+# The function should return a new list containing elements that are in both of the two lists.
+# You may assume that each input list does not contain duplicate elements.
+
+def intersection(list1, list2)
+  result = []
+  list1.each do |el|
+    if list2.include?(el)
+      result.push(el)
+    end
+  end
+  return result.sort
+end
+
+p 'INTERSECTION'
+p intersection([4,2,1,6], [3,6,9,2,10]) # -> [2,6]
+p intersection([2,4,6], [4,2]) # -> [2,4]
+p intersection([4,2,1], [1,2,4,6]) # -> [1,2,4]
+p intersection([0,1,2], [10,11]) # -> []
+a = Array (0..5000)
+b = Array (0..5000)
+# p intersection(a, b) # -> [0,1,2,3,..., 4999]
+puts
+
+
+
+
+
+# FIVE SORT
+# Write a function, five_sort, that takes in a list of numbers as an argument. 
+# The function should rearrange elements of the list such that all 5s appear at the end. 
+# Your function should perform this operation in-place by mutating the original list. 
+# The function should return the list.
+
+# Elements that are not 5 can appear in any order in the output, as long as all 5s are at the end of the list.
+# SUDO
+# 
+
+def five_sort(nums)
+  nums
+end
+p 'FIVE SORT'
+
+p five_sort([12, 5, 1, 5, 12, 7]) # -> [12, 7, 1, 12, 5, 5]
+p five_sort([5, 2, 5, 6, 5, 1, 10, 2, 5, 5]) # -> [2, 2, 10, 6, 1, 5, 5, 5, 5, 5]
+p five_sort([5, 5, 5, 1, 1, 1, 4]) # -> [4, 1, 1, 1, 5, 5, 5]
+p five_sort([5, 5, 6, 5, 5, 5, 5]) # -> [6, 5, 5, 5, 5, 5, 5]
+p five_sort([5, 1, 2, 5, 5, 3, 2, 5, 1, 5, 5, 5, 4, 5]) # -> [4, 1, 2, 1, 2, 3, 5, 5, 5, 5, 5, 5, 5, 5]
+fours = [4] * 20000
+fives = [5] * 20000
+nums = fours + fives
+# p five_sort(nums)
+# twenty-thousand 4s followed by twenty-thousand 5s
+# -> [4, 4, 4, 4, ..., 5, 5, 5, 5]
+
+
+
+
 
 
 
