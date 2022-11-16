@@ -1,3 +1,4 @@
+require 'set'
 # UNCOMPRESS
 # Write a function, uncompress, that takes in a string as an argument. 
 # The input string will be formatted into multiple groups according to the following pattern: <number><char> for example, '2c' or '3a'.
@@ -257,7 +258,8 @@ def intersection(list1, list2)
 end
 
 def intersection2(list1, list2)
-  list1 & list2
+  s1 = Set.new(list1)
+  list2.select { |el| s1.include?(el) }
 end
 
 p 'INTERSECTION'
@@ -267,7 +269,7 @@ p intersection2([4,2,1], [1,2,4,6]) # -> [1,2,4]
 p intersection2([0,1,2], [10,11]) # -> []
 a = Array (0..5000)
 b = Array (0..5000)
-# p intersection(a, b) # -> [0,1,2,3,..., 4999]
+p intersection(a, b) # -> [0,1,2,3,..., 4999]
 puts
 
 
@@ -285,8 +287,12 @@ puts
 # 
 
 def five_sort(nums)
+  nums.each_with_index do |el, i|
+    i = -1 if el == 5
+  end
   nums
 end
+
 p 'FIVE SORT'
 
 p five_sort([12, 5, 1, 5, 12, 7]) # -> [12, 7, 1, 12, 5, 5]
