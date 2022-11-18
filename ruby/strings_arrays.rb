@@ -5,34 +5,16 @@
 # You may assume that the input string is well-formed according to the previously mentioned pattern.
 
 def uncompress(s)
-  result = [] # setup array for the final result to be joined at the end of the end of the function
-  numbers = '0123456789' # numbers string to test with the .include? method
-  i = 0 # i will be the first pointer representing the first part of the number
-  j = 0 # j will be the second pointer representing the second digit and the letter.
-  while j < s.length # since j is the second pointer we will use this as the while loop
-    if numbers.include?(s[j])
-      j += 1 # if s[j] is a number than just concatonate
-    else
-      res = s.slice(i, j).to_i # else (once the j is on a letter) slice from i to j non inclusive and use the to_i method to change it to an integer
-      res.times { result.push(s[j]) } # That number amount of times, push the letter (currently s[j]) into the result array created at the beginning of the function
-      j += 1
-      i = j
-    end # concat j again and bring i up to speed
-  end
-  return result.join('') # join the result together and return it!
-end
-
-# UNCOMPRESS2
-def uncompress2(s)
   result = []
-  numbers = '0123456789'
+  numbers = '1234567890'
   i = 0
   j = 0
   while j < s.length
     if numbers.include?(s[j])
       j += 1
     else
-      s[i, j].to_i.times { result.push(s[j]) }
+      count = s[i..j].to_i
+      count.times { result.push(s[j]) }
       j += 1
       i = j
     end
@@ -45,7 +27,7 @@ p uncompress("2c3a1t") # -> 'ccaaat'
 p uncompress("4s2b") # -> 'ssssbb'
 p uncompress("2p1o5p") # -> 'ppoppppp'
 p uncompress("3n12e2z") # -> 'nnneeeeeeeeeeeezz'
-p uncompress2("127y") # -> 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+p uncompress("127y") # -> 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
 puts
 
 
@@ -59,27 +41,6 @@ puts
 # Single character occurrences should not be changed.
 
 def compress(s)
-  result = [];
-  i = 0;
-  j = 0;
-  while j <= s.length
-    if s[i] == s[j]
-      j += 1
-    else
-      count = j - i
-      if count == 1
-        result.push(s[i])
-      else
-        result.push(count, s[i])
-      end
-      i = j
-    end
-  end
-  return result.join('')
-end
-
-# COMPRESS2
-def compress2(s)
   result = []
   i = 0
   j = 0
@@ -88,7 +49,7 @@ def compress2(s)
       j += 1
     else
       count = j - i
-      result.push(count.to_s, s[i])
+      result.push(count.to_s + s[i])
       i = j
     end
   end
@@ -96,11 +57,11 @@ def compress2(s)
 end
 
 p 'COMPRESS'
-p compress2('ccaaatsss') # -> '2c3at3s'
-p compress2('ssssbbz') # -> '4s2bz'
-p compress2('ppoppppp') # -> '2po5p'
-p compress2('nnneeeeeeeeeeeezz') # -> '3n12e2z'
-p compress2('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'); # -> '127y'
+p compress('ccaaatsss') # -> '2c3at3s'
+p compress('ssssbbz') # -> '4s2bz'
+p compress('ppoppppp') # -> '2po5p'
+p compress('nnneeeeeeeeeeeezz') # -> '3n12e2z'
+p compress('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'); # -> '127y'
 puts
 
 
