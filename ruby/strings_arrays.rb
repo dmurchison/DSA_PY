@@ -49,7 +49,7 @@ def compress(s)
       j += 1
     else
       count = j - i
-      result.push(count.to_s + s[i])
+      count != 1 ? result.push(count.to_s + s[i]) : result.push(s[i])
       i = j
     end
   end
