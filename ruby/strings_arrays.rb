@@ -120,11 +120,10 @@ puts
 # If there are ties, return the character that appears earlier in the string.
 
 def most_frequent_char(s)
-  hash = Hash.new(0)
-  s.each_char do |el|
-    hash[el] += 1
-  end
-  hash.max_by{ |k,v| v }[0]
+  f_char = s[0]
+  h = Hash.new(0)
+  s.each_char { |el| h[el] += 1 }
+  h.each_pair { |k,v| if  }
 end
 
 p 'MOST FREQUENT CHAR'
