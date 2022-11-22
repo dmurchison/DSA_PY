@@ -205,6 +205,7 @@ puts
 # Write a function, intersection, that takes in two lists, a,b, as arguments. 
 # The function should return a new list containing elements that are in both of the two lists.
 # You may assume that each input list does not contain duplicate elements.
+
 require 'set'
 
 def intersection2(list1, list2)
@@ -232,8 +233,6 @@ puts
 # The function should return the list.
 
 # Elements that are not 5 can appear in any order in the output, as long as all 5s are at the end of the list.
-# SUDO
-# 
 
 def five_sort(nums)
   i = 0
