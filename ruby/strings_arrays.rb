@@ -120,10 +120,10 @@ puts
 # If there are ties, return the character that appears earlier in the string.
 
 def most_frequent_char(s)
-  f_char = s[0]
-  h = Hash.new(0)
-  s.each_char { |el| h[el] += 1 }
-  h.each_pair { |k,v| if  }
+  h = Hash.new(0) # Create a hash with a default value of 0
+  s.each_char { |el| h[el] += 1 } # Iterate through the string creating a key for each letter and concatonating the value by 1 each time the letter appears
+  h.each { |k,v| return k if v == h.values.max } # Iterate through the hash and return the key if the value is the highest
+  # This was the quickest way I was able to think of solving this because the 
 end
 
 p 'MOST FREQUENT CHAR'
@@ -206,6 +206,11 @@ puts
 # The function should return a new list containing elements that are in both of the two lists.
 # You may assume that each input list does not contain duplicate elements.
 
+def intersection(l1, l2)
+  result = []
+  l1.select { |el| l2.include?(el) }
+end
+
 require 'set'
 
 def intersection2(list1, list2)
@@ -213,10 +218,10 @@ def intersection2(list1, list2)
 end
 
 p 'INTERSECTION'
-p intersection2([4,2,1,6], [3,6,9,2,10]) # -> [2,6]
-p intersection2([2,4,6], [4,2]) # -> [2,4]
-p intersection2([4,2,1], [1,2,4,6]) # -> [1,2,4]
-p intersection2([0,1,2], [10,11]) # -> []
+p intersection([4,2,1,6], [3,6,9,2,10]) # -> [2,6]
+p intersection([2,4,6], [4,2]) # -> [2,4]
+p intersection([4,2,1], [1,2,4,6]) # -> [1,2,4]
+p intersection([0,1,2], [10,11]) # -> []
 a = Array (0..5000)
 b = Array (0..5000)
 p intersection2(a, b) # -> [0,1,2,3,..., 4999]
