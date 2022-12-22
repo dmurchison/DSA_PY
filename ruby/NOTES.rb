@@ -8,15 +8,19 @@ def uncompress(s)
   result = []
   numbers = '0123456789'
 
-  s.chars.each_with_index do |char, idx|
-    num = ''
-    if numbers.include?(char)
-      num += char
+  i = 0
+  j = 0
+  while j < s.length
+    if numbers.include?(s[j])
+      j += 1
     else
-      num.to_i.times { result.push(s[idx + 1]) }
+      count = s[i..j].to_i
+      count.times { result.push(s[j]) }
+      j += 1
+      i = j
     end
   end
-  result.join
+  result.join('')
 end
 
 p 'UNCOMPRESS'

@@ -14,7 +14,7 @@ def uncompress(s)
       j += 1
     else
       count = s[i..j].to_i
-      count.times { result.push(s[j]) }
+      count.times { result.push(s[i]) }
       j += 1
       i = j
     end
