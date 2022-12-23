@@ -7,7 +7,6 @@
 def uncompress(s)
   result = []
   numbers = '0123456789'
-
   i = 0
   j = 0
   while j < s.length
@@ -30,3 +29,10 @@ p uncompress("2p1o5p") # -> 'ppoppppp'
 p uncompress("3n12e2z") # -> 'nnneeeeeeeeeeeezz'
 p uncompress("127y") # -> 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
 puts
+
+
+
+puts
+puts
+p [1,2,3,4,5].map { |x| x * x }
+
