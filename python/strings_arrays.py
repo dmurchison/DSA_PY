@@ -19,6 +19,3 @@ print(intersection2([0,1,2], [10,11])) # -> []
 # b = Array (0..5000)
 # print(intersection(a, b)) # -> [0,1,2,3,..., 4999]
 
-
-def uncompressed(s):
-   

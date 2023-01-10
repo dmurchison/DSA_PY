@@ -36,3 +36,24 @@ puts
 puts
 p [1,2,3,4,5].map { |x| x * x }
 
+# How to do a binary_search algorithm...
+
+def binary_search(array, target)
+  return "Target no found" if array.nil?
+  middle_index = array.length / 2
+  case target <=> array[middle_index]
+  when -1
+    left_side = binary_search(array.take(middle_index), target)
+  when 0 
+    return middle_index
+  else
+    right_side = binary_search(array.drop(middle_index + 1), target)
+    right_side.nil? ? nil : (middle_index + 1) + right_side
+  end
+end
+
+p binary_search([5,6,7,8,9], 9)
+
+# Another push test
+
+
