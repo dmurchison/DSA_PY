@@ -19,3 +19,12 @@ print(intersection2([0,1,2], [10,11])) # -> []
 # b = Array (0..5000)
 # print(intersection(a, b)) # -> [0,1,2,3,..., 4999]
 
+def binary_search(array, target):
+  if high >= low:
+    mid = (high + low) // 2
+    if array[mid] == target:
+      return mid
+    elif array[mid] > target:
+      return binary_search(array, target, low, mid - 1)
+    else:
+      return binary_search(array, target, mid + 1, high)
