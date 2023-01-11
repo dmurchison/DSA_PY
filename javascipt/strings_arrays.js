@@ -105,6 +105,9 @@ console.log(anagrams('tax', 'taxi')); // -> false
 console.log(anagrams('taxi', 'tax')); // -> false
 
 
+const binary_search = (arr, target) => {
+  
+}
 
 
 

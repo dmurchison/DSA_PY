@@ -268,7 +268,26 @@ nums = fours + fives
 # p five_sort(nums)
 # twenty-thousand 4s followed by twenty-thousand 5s
 # -> [4, 4, 4, 4, ..., 5, 5, 5, 5]
+puts
 
 
+def binary_search(array, target)
+  return "There is no target" if array.empty?
+  middle_index = array.length / 2
+  case target <=> array[middle_index]
+  when -1
+    return binary_search(array[0...middle_index], target)
+  when 0
+    return middle_index
+  else
+    right = binary_search(array[middle_index + 1..-1], target)
+    return right == "There is no target" ? "There is no target" : middle_index + 1 + right
+  end
+end
 
+p 'BINARY SEARCH'
+
+p binary_search([5,6,7,8,9,10,11,12], 15)
+p binary_search([5,6,7,8,9,10,11,12], 11)
+p binary_search([5,6,7,8,9,10,11,12], 7)
 
