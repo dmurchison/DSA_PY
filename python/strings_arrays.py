@@ -1,11 +1,4 @@
-print('windowsTest')
-
-a = [ i for i in range(0, 50000) ]
-b = [ i for i in range(0, 50000) ]
-
-# print(a)
-# print(b)
-
+# Intersection of Two Arrays
 def intersection2(list1, list2):
   s1 = set(list1)
   return s1
@@ -15,16 +8,30 @@ print(intersection2([4,2,1,6], [3,6,9,2,10])) # -> [2,6]
 print(intersection2([2,4,6], [4,2])) # -> [2,4]
 print(intersection2([4,2,1], [1,2,4,6])) # -> [1,2,4]
 print(intersection2([0,1,2], [10,11])) # -> []
-# a = Array (0..5000)
-# b = Array (0..5000)
-# print(intersection(a, b)) # -> [0,1,2,3,..., 4999]
+print()
 
+
+# Binary Search
 def binary_search(array, target):
-  if high >= low:
-    mid = (high + low) // 2
-    if array[mid] == target:
-      return mid
-    elif array[mid] > target:
-      return binary_search(array, target, low, mid - 1)
+  if len(array) == 0:
+    return -1
+  mid = len(array) // 2
+  if array[mid] == target:
+    return mid
+  elif array[mid] > target:
+    return binary_search(array[:mid], target)
+  else:
+    result = binary_search(array[mid+1:], target)
+    if result == -1:
+      return -1
     else:
-      return binary_search(array, target, mid + 1, high)
+      return mid + 1 + result
+
+print(binary_search([1,2,3,4,5,6,7,8,9,10], 5)) # -> 4
+print(binary_search([1,2,3,4,5,6,7,8,9,10], 10)) # -> 9
+print(binary_search([1,2,3,4,5,6,7,8,9,10], 1)) # -> 0
+print()
+
+
+# X Or Trick
+

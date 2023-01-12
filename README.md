@@ -1,4 +1,3 @@
-# Data Structures and Algorithms
-- DS&A
-- PYTHON
+# Data Structures and Algorithms With Python
+
 
