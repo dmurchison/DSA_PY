@@ -147,3 +147,159 @@ print()
 
 
 
+# ROTATE ARRAY
+# Write a function rotate_array(array) that takes in an array and returns the
+# array after rotating the elements in the array by one position in the
+# clockwise direction.
+
+def rotate_array(array):
+  return array[-1:] + array[:-1]
+
+print(rotate_array([1,2,3,4,5])) # -> [5,1,2,3,4]
+print(rotate_array([2,3,4,5,6])) # -> [6,2,3,4,5]
+print(rotate_array([3,4,5,6,7])) # -> [7,3,4,5,6]
+print(rotate_array([4,5,6,7,8])) # -> [8,4,5,6,7]
+print(rotate_array([5,6,7,8,9])) # -> [9,5,6,7,8]
+print(rotate_array([6,7,8,9,10])) # -> [10,6,7,8,9]
+print(rotate_array([7,8,9,10,11])) # -> [11,7,8,9,10]
+print()
+
+
+
+# ROTATE MATRIX
+# Write a function rotate_matrix(matrix) that takes in a 2 dimensional array
+# representing a square matrix and returns the matrix after rotating the
+# elements in the matrix by 90 degrees in the clockwise direction.
+
+def rotate_matrix(matrix):
+  rotated = []
+  for i in range(len(matrix)):
+    rotated.append([])
+    for j in range(len(matrix)):
+      rotated[i].append(matrix[len(matrix) - 1 - j][i])
+
+  return rotated
+
+print(rotate_matrix([
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+])) # -> [
+#      [7,4,1],
+#      [8,5,2],
+#      [9,6,3]
+#    ]
+print(rotate_matrix([
+  [1,2,3,4],
+  [5,6,7,8],
+  [9,10,11,12],
+  [13,14,15,16]
+])) # -> [
+#      [13,9,5,1],
+#      [14,10,6,2],
+#      [15,11,7,3],
+#      [16,12,8,4]
+#    ]
+print(rotate_matrix([
+  [1,2,3,4,5],
+  [6,7,8,9,10],
+  [11,12,13,14,15],
+  [16,17,18,19,20],
+  [21,22,23,24,25]
+])) # -> [
+#      [21,16,11,6,1],
+#      [22,17,12,7,2],
+#      [23,18,13,8,3],
+#      [24,19,14,9,4],
+#      [25,20,15,10,5]
+#    ]
+print()
+
+
+
+# ROTATE MATRIX IN PLACE
+# Write a function rotate_matrix_in_place(matrix) that takes in a 2 dimensional
+# array representing a square matrix and rotates the elements in the matrix by
+# 90 degrees in the clockwise direction in place.
+
+def rotate_matrix_in_place(matrix):
+  n = len(matrix)
+  for i in range(n // 2):
+    for j in range(i, n - 1 - i):
+      temp = matrix[i][j]
+      matrix[i][j] = matrix[n - 1 - j][i]
+      matrix[n - 1 - j][i] = matrix[n - 1 - i][n - 1 - j]
+      matrix[n - 1 - i][n - 1 - j] = matrix[j][n - 1 - i]
+      matrix[j][n - 1 - i] = temp
+
+  return matrix
+
+print(rotate_matrix_in_place([
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+])) # -> [
+#      [7,4,1],
+#      [8,5,2],
+#      [9,6,3]
+#    ]
+print(rotate_matrix_in_place([
+  [1,2,3,4],
+  [5,6,7,8],
+  [9,10,11,12],
+  [13,14,15,16]
+])) # -> [
+#      [13,9,5,1],
+#      [14,10,6,2],
+#      [15,11,7,3],
+#      [16,12,8,4]
+#    ]
+print(rotate_matrix_in_place([
+  [1,2,3,4,5],
+  [6,7,8,9,10],
+  [11,12,13,14,15],
+  [16,17,18,19,20],
+  [21,22,23,24,25]
+])) # -> [
+#      [21,16,11,6,1],
+#      [22,17,12,7,2],
+#      [23,18,13,8,3],
+#      [24,19,14,9,4],
+#      [25,20,15,10,5]
+#    ]
+print()
+
+
+
+# SUM DIGITS
+# Write a function sum_digits(num) that takes in a number and returns the sum
+# of its digits.
+
+def sum_digits(num):
+  if num < 10:
+    return num
+
+  return num % 10 + sum_digits(num // 10)
+
+print(sum_digits(123)) # -> 6
+print(sum_digits(6)) # -> 6
+print(sum_digits(123456789)) # -> 45
+print()
+
+
+
+# COUNT DIGITS
+# Write a function count_digits(num) that takes in a number and returns the
+# number of digits in the number.
+
+def count_digits(num):
+  if num < 10:
+    return 1
+
+  return 1 + count_digits(num // 10)
+
+print(count_digits(123)) # -> 3
+print(count_digits(6)) # -> 1
+print(count_digits(123456789)) # -> 9
+print()
+
