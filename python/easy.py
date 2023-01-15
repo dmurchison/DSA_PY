@@ -7,12 +7,12 @@ from math import floor
 # the largest number in the list.
 
 def max_value(nums):
-  max = float('-inf')
-  for num in nums:
-    if num > max:
-      max = num
+    max = float('-inf')
+    for num in nums:
+        if num > max:   
+            max = num
 
-  return max
+    return max
 
 print(max_value([4,7,2,8,10,9])) # -> 10
 print(max_value([1,2,3,4,5,6,7,8,9,10])) # -> 10
@@ -60,12 +60,12 @@ print()
 # containing all the prime factors of the given number.
 
 def prime_factors(n):
-  factors = []
-  for i in range(2, n):
-    if n % i == 0 and is_prime(i):
-      factors.append(i)
+    factors = []
+    for i in range(2, n):
+        if n % i == 0 and is_prime(i):
+            factors.append(i)
 
-  return factors
+    return factors
 
 print(prime_factors(12)) # -> [2,3]
 print(prime_factors(24)) # -> [2,3]
@@ -84,18 +84,18 @@ print()
 # fibonacci sequence up to the given length.
 
 def fibonacci(n):
-  if n == 0:
-    return []
-  if n == 1:
-    return [0]
-  if n == 2:
-    return [0, 1]
+    if n == 0:
+        return []
+    if n == 1:
+        return [0]
+    if n == 2:
+        return [0, 1]
 
-  fibs = [0, 1]
-  while len(fibs) < n:
-    fibs.append(fibs[-1] + fibs[-2])
+    fibs = [0, 1]
+    while len(fibs) < n:
+        fibs.append(fibs[-1] + fibs[-2])
 
-  return fibs
+    return fibs
 
 print(fibonacci(0)) # -> []
 print(fibonacci(1)) # -> [0]
@@ -117,19 +117,19 @@ print()
 # function should return -1.
 
 def binary_search(array, target):
-  left = 0
-  right = len(array) - 1
+    left = 0
+    right = len(array) - 1
 
-  while left <= right:
-    mid = (left + right) // 2
-    if array[mid] == target:
-      return mid
-    elif array[mid] < target:
-      left = mid + 1
-    else:
-      right = mid - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if array[mid] == target:
+            return mid
+        elif array[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
 
-  return -1
+    return -1
 
 print(binary_search([1,2,3,4,5,6,7,8,9,10], 1)) # -> 0
 print(binary_search([1,2,3,4,5,6,7,8,9,10], 2)) # -> 1
@@ -153,7 +153,7 @@ print()
 # clockwise direction.
 
 def rotate_array(array):
-  return array[-1:] + array[:-1]
+    return array[-1:] + array[:-1]
 
 print(rotate_array([1,2,3,4,5])) # -> [5,1,2,3,4]
 print(rotate_array([2,3,4,5,6])) # -> [6,2,3,4,5]
@@ -172,47 +172,33 @@ print()
 # elements in the matrix by 90 degrees in the clockwise direction.
 
 def rotate_matrix(matrix):
-  rotated = []
-  for i in range(len(matrix)):
-    rotated.append([])
-    for j in range(len(matrix)):
-      rotated[i].append(matrix[len(matrix) - 1 - j][i])
+    rotated = []
+    for i in range(len(matrix)):
+        rotated.append([])
 
-  return rotated
+        for j in range(len(matrix)):
+            rotated[i].append(matrix[len(matrix) - 1 - j][i])
+
+    return rotated
 
 print(rotate_matrix([
-  [1,2,3],
-  [4,5,6],
-  [7,8,9]
-])) # -> [
-#      [7,4,1],
-#      [8,5,2],
-#      [9,6,3]
-#    ]
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+])) # -> [[7,4,1],[8,5,2],[9,6,3]]
 print(rotate_matrix([
-  [1,2,3,4],
-  [5,6,7,8],
-  [9,10,11,12],
-  [13,14,15,16]
-])) # -> [
-#      [13,9,5,1],
-#      [14,10,6,2],
-#      [15,11,7,3],
-#      [16,12,8,4]
-#    ]
+    [1,2,3,4],
+    [5,6,7,8],
+    [9,10,11,12],
+    [13,14,15,16]
+])) # -> [[13,9,5,1],[14,10,6,2],[15,11,7,3],[16,12,8,4]]
 print(rotate_matrix([
-  [1,2,3,4,5],
-  [6,7,8,9,10],
-  [11,12,13,14,15],
-  [16,17,18,19,20],
-  [21,22,23,24,25]
-])) # -> [
-#      [21,16,11,6,1],
-#      [22,17,12,7,2],
-#      [23,18,13,8,3],
-#      [24,19,14,9,4],
-#      [25,20,15,10,5]
-#    ]
+    [1,2,3,4,5],
+    [6,7,8,9,10],
+    [11,12,13,14,15],
+    [16,17,18,19,20],
+    [21,22,23,24,25]
+])) # -> [[21,16,11,6,1],[22,17,12,7,2],[23,18,13,8,3],[24,19,14,9,4],[25,20,15,10,5]]
 print()
 
 
@@ -223,50 +209,35 @@ print()
 # 90 degrees in the clockwise direction in place.
 
 def rotate_matrix_in_place(matrix):
-  n = len(matrix)
-  for i in range(n // 2):
-    for j in range(i, n - 1 - i):
-      temp = matrix[i][j]
-      matrix[i][j] = matrix[n - 1 - j][i]
-      matrix[n - 1 - j][i] = matrix[n - 1 - i][n - 1 - j]
-      matrix[n - 1 - i][n - 1 - j] = matrix[j][n - 1 - i]
-      matrix[j][n - 1 - i] = temp
+    n = len(matrix)
+    for i in range(n // 2):
+        for j in range(i, n - 1 - i):
+            temp = matrix[i][j]
+            matrix[i][j] = matrix[n - 1 - j][i]
+            matrix[n - 1 - j][i] = matrix[n - 1 - i][n - 1 - j]
+            matrix[n - 1 - i][n - 1 - j] = matrix[j][n - 1 - i]
+            matrix[j][n - 1 - i] = temp
 
-  return matrix
+    return matrix
 
 print(rotate_matrix_in_place([
-  [1,2,3],
-  [4,5,6],
-  [7,8,9]
-])) # -> [
-#      [7,4,1],
-#      [8,5,2],
-#      [9,6,3]
-#    ]
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+])) # -> [[7,4,1],[8,5,2],[9,6,3]]
 print(rotate_matrix_in_place([
-  [1,2,3,4],
-  [5,6,7,8],
-  [9,10,11,12],
-  [13,14,15,16]
-])) # -> [
-#      [13,9,5,1],
-#      [14,10,6,2],
-#      [15,11,7,3],
-#      [16,12,8,4]
-#    ]
+    [1,2,3,4],
+    [5,6,7,8],
+    [9,10,11,12],
+    [13,14,15,16]
+])) # -> [[13,9,5,1],[14,10,6,2],[15,11,7,3],[16,12,8,4]]
 print(rotate_matrix_in_place([
-  [1,2,3,4,5],
-  [6,7,8,9,10],
-  [11,12,13,14,15],
-  [16,17,18,19,20],
-  [21,22,23,24,25]
-])) # -> [
-#      [21,16,11,6,1],
-#      [22,17,12,7,2],
-#      [23,18,13,8,3],
-#      [24,19,14,9,4],
-#      [25,20,15,10,5]
-#    ]
+    [1,2,3,4,5],
+    [6,7,8,9,10],
+    [11,12,13,14,15],
+    [16,17,18,19,20],
+    [21,22,23,24,25]
+])) # -> [[21,16,11,6,1],[22,17,12,7,2],[23,18,13,8,3],[24,19,14,9,4],[25,20,15,10,5]]
 print()
 
 
@@ -276,10 +247,10 @@ print()
 # of its digits.
 
 def sum_digits(num):
-  if num < 10:
-    return num
+    if num < 10:
+        return num
 
-  return num % 10 + sum_digits(num // 10)
+    return num % 10 + sum_digits(num // 10)
 
 print(sum_digits(123)) # -> 6
 print(sum_digits(6)) # -> 6
@@ -293,13 +264,14 @@ print()
 # number of digits in the number.
 
 def count_digits(num):
-  if num < 10:
-    return 1
+    if num < 10:
+        return 1
 
-  return 1 + count_digits(num // 10)
+    return 1 + count_digits(num // 10)
 
 print(count_digits(123)) # -> 3
 print(count_digits(6)) # -> 1
 print(count_digits(123456789)) # -> 9
+print(count_digits(19)) # -> 2
 print()
 
