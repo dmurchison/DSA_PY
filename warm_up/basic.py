@@ -1,5 +1,5 @@
-from cmath import sqrt
-from math import floor
+# Warm Up: Basic
+
 
 
 # MAX VALUE
@@ -22,6 +22,7 @@ print(max_value([20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1])) # -> 20
 print(max_value([1,2,3,4,5,6,7,8,9,10,11,12,13,17,18,19,20,21])) # -> 21
 print(max_value([21,20,19,18,17,16,15,14,1,7,6,5,4,3,2,1])) # -> 21
 print()
+
 
 
 # PRIME
@@ -53,6 +54,7 @@ print(is_prime(2048)) # -> False
 print(is_prime(1)) # -> False
 print(is_prime(713)) # -> False
 print()
+
 
 
 # PRIME FACTORS

@@ -1,4 +1,11 @@
 # Data Structures and Algorithms
-- DS&A
-- PYTHON
+
+## Warm Up
+
+- Some basic python algorithms meant to warm up the brain and gain some
+  confidence before
+
+## Interview Prep
+
+  
 
