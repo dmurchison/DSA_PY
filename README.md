@@ -8,9 +8,7 @@
 
 
 ## Interview Prep
-  - Categorized based on the difficulty and algorithm pattern, this is a list of algorithms for me to interview prep.
-
-  - I recommend approaching these problems in order of the categories and difficulty, The files are numbered to make this easier.
+  - Implementation of the neetcode 150
 
 ----------
 
