@@ -12,8 +12,9 @@
 
   - I recommend approaching these problems in order of the categories and difficulty, The files are numbered to make this easier.
 
+----------
 
 ## Why Python?
-    After learning Ruby and JavaScript I wanted to learn a language that I could things other than Web Development with. I chose Python because I am still interviewing on a consistent basis so its nice to have a default DS&A language that is widely accepted and more importantly "good" for DS&A. I believe Python is just that.
+  After learning Ruby and JavaScript I wanted to learn a language that I could things other than Web Development with. I chose Python because I am still interviewing on a consistent basis so its nice to have a default DS&A language that is widely accepted and more importantly "good" for DS&A. I believe Python is just that.
 
 
