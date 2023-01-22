@@ -1,17 +1,14 @@
-# Tidying messy data
-
-country = '107, Golf, United States, Gold, 7'
-parts = country.split (',')
-new = int (parts [0]) + 1
-print(new)
+# LIST
+# A list is a collection which is ordered and changeable. 
+# Allows duplicate members.
+list = ["apple", "banana", "cherry"]
+print(list[1]) # banana
+print(list[-1]) # cherry
+print(list[2:]) # ["cherry"]
+print(list[:2]) # ["apple", "banana"]
+print(list[1:2]) # ["banana"]
+print(list[1:-1]) # ["banana"]
 print()
-# Variables and types
-
-# None
-this_var_is_none = None
-print(this_var_is_none, type(this_var_is_none))
-
-
 example_list = [1, 2, 3, 4, 5]
 example_list_2 = example_list[2:4]
 print(example_list_2)
