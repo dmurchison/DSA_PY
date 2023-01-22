@@ -32,6 +32,19 @@ def add_subtract_numbers(num1, num2 = 2):
 
 *_, last = add_subtract_numbers(1)  # (3, -1)
 print(last)  # -1
+print()
+
+
+# Global Variables
+outside_var = 1
+def add_one(num):
+    global outside_var
+    outside_var += 1
+    return num + outside_var
+
+print(add_one(1))  # 3
+print(outside_var)  # 2
+print()
 
 
 
