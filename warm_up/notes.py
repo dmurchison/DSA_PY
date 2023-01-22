@@ -5,32 +5,33 @@ parts = country.split (',')
 new = int (parts [0]) + 1
 print(new)
 print()
-# Variables and types
 
 # None
 this_var_is_none = None
 print(this_var_is_none, type(this_var_is_none))
+print()
 
 
-example_list = [1, 2, 3, 4, 5]
-example_list_2 = example_list[2:4]
-print(example_list_2)
+# Formatting Strings
+name = 'John'
+age = 36.12333
+zip_code = 1234
+output = f"{name} is {age:.2f} years old, and his zip code is {zip_code:05d}."  # f-string
+# TODO: This is a cool comment.
+print(output)
 print()
-example_list += example_list_2
-print("Addition Example # Array += Array_2")
-print(example_list)
-print()
-example_list.append(example_list_2)
-print("Append Example # Array.append(Array)")
-print(example_list)
-print()
-example_list = example_list[2:]
-print("Slicing Example # Array[2:]")
-print(example_list)
-print()
-returned_value = example_list.pop()
-print("Pop Example # Array.pop()")
-print("Array.pop() - ",returned_value)
-print("Array - ", example_list)
-print()
+
+# If Else Statements
+random_list = [1, 'a', 0, False, True, '0']
+for el in random_list:
+    print(el)
+
+def add_subtract_numbers(num1, num2 = 2):
+    return num1 + num2, num1 - num2
+
+
+*_, last = add_subtract_numbers(1)  # (3, -1)
+print(last)  # -1
+
+
 
