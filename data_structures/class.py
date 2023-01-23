@@ -1,23 +1,13 @@
-# Class definition
-class Animal:
-    fur_color = "Gray"
-    friends = ['Wolf', 'Giraffe', 'Dog']
+# Class
 
-    def __init__(self, type="Turtle", height=100, weight=100):
-        self.type = type
+class Animal:
+    friends = ['Clark', 'Frank', 'Jessica']
+
+    def __init__(self, height=100, weight=100):
         self.height = height
         self.weight = weight
         self._private_weight = 50
         self.__very_private_weight = 1000
-
-    def print_height(self):
-        print(f"This {self.get_type()}'s height is {self.height} feet")
-
-    def get_type(self):
-        return self.type
-
-    def get_fur_color(self):
-        return self.fur_color
     
     def get_friends(self):
         return self.friends
@@ -25,25 +15,37 @@ class Animal:
     def set_height(self, height):
         self.height = height
 
+    def get_height(self):
+        return self.height
+
     def get_private(self):
         print(self.__very_private_weight)
+    
+    def greet(self):
+        print("This animal makes no sound")
 
 
-animal_1 = Animal("Elephant", height=120, weight=80)
-animal_2 = Animal(height=70, weight=150)
-animal_3 = Animal()
+class Dog(Animal):
+    def __init__(self, height, weight, fur_color):
+        self.fur_color = fur_color
+        super().__init__(height=height, weight=weight)
+
+    def get_fur_color(self):
+        return self.fur_color
+
+    @classmethod
+    def greet(self):
+        print("Woof woof")
 
 
-animal_1.print_height()
-animal_1.set_height(500)
-animal_1.print_height()
+sample_dog = Dog(50, 25, "Brown")
+print(sample_dog.get_fur_color(), sample_dog.get_height())
+sample_dog.greet()
 
-print(animal_3.__very_private_weight)
-print(animal_2.get_type())
-print(animal_3.type)
-animal_3.friends.append("Jerry")
-print(animal_3.get_friends())
+Dog.greet()
+print("A dog's starting friends are:", Dog.friends)
 
-print(animal_3._private_weight)
+sample_dog.friends.append("Jerry")
 
+print(sample_dog.get_friends())
 
