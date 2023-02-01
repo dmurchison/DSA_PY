@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# Data Structures and Algorithms With Python
+=======
 # Data Structures and Algorithms
 
 
@@ -14,5 +17,6 @@
 
 ## Why Python?
   After learning Ruby and JavaScript I wanted to learn a language that I could things other than Web Development with. I chose Python because I am still interviewing on a consistent basis so its nice to have a default DS&A language that is widely accepted and more importantly "good" for DS&A. I believe Python is just that.
+>>>>>>> 312637a9d42cabad645e1c4cb0b0677e3ff093af
 
 
