@@ -17,6 +17,14 @@ class Solution:
             hash_set.add(n)
         return False
 
+    def contains_duplicate_2(self, nums: List[int]) -> bool:
+        print(len(set(nums)))
+        print(len(nums))
+
+
+print(Solution().contains_duplicate_2([1,2,3,1])) # True
+print(Solution().contains_duplicate_2([1,2,3,4])) # False
+print()
 print(Solution().contains_duplicate([1,2,3,1])) # True
 print(Solution().contains_duplicate([1,2,3,4])) # False
 print(Solution().contains_duplicate([1,1,1,3,3,4,3,2,4,2])) # True
