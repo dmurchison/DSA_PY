@@ -304,8 +304,7 @@ print(ord("b"))
 
 # Combine a list of strings (with an empty string delimitor)
 strings = ["ab", "cd", "ef"]
-print("".join(strings))
->>> "abcdef"
+print("".join(strings)) # -> "abcdef"
 
 
 

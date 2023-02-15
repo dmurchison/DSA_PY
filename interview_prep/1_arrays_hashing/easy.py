@@ -17,14 +17,7 @@ class Solution:
             hash_set.add(n)
         return False
 
-    def contains_duplicate_2(self, nums: List[int]) -> bool:
-        print(len(set(nums)))
-        print(len(nums))
 
-
-print(Solution().contains_duplicate_2([1,2,3,1])) # True
-print(Solution().contains_duplicate_2([1,2,3,4])) # False
-print()
 print(Solution().contains_duplicate([1,2,3,1])) # True
 print(Solution().contains_duplicate([1,2,3,4])) # False
 print(Solution().contains_duplicate([1,1,1,3,3,4,3,2,4,2])) # True
@@ -41,21 +34,11 @@ print()
 
 class Solution:
     def is_anagram(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
-        hash_map = {}
-        for c in s:
-            if c in hash_map:
-                hash_map[c] += 1
-            else:
-                hash_map[c] = 1
-        for c in t:
-            if c not in hash_map:
-                return False
-            hash_map[c] -= 1
-            if hash_map[c] < 0:
-                return False
-        return True
+        my_hash = {}
+        for i in s:
+            my_hash[i] = 1 + my_hash.get(i, 0)
+        return my_hash
+
 
 print(Solution().is_anagram("anagram", "nagaram")) # True
 print(Solution().is_anagram("rat", "car")) # False
@@ -64,6 +47,7 @@ print(Solution().is_anagram("ab", "a")) # False
 print(Solution().is_anagram("aacc", "ccac")) # False
 print(Solution().is_anagram("racecar", "racecar")) # True
 print()
+
 
 
 
