@@ -33,3 +33,14 @@ hash.clear()
 print(hash) # {}
 print()
 
+
+
+def my_function(s):
+    my_hash = {}
+    for i in s:
+        my_hash[i] = 1 + my_hash.get(i, 0)
+    return my_hash.get("a")
+    
+
+my_string = "abcdefghijklmnopqrrstuvvauxyz"
+print(my_function(my_string))
