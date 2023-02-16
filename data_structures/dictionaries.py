@@ -16,8 +16,7 @@ for x in hash:
     print(x) # brand model year
 for x in hash:
     print(hash[x]) # Ford Mustang 2018
-for x in hash.values():
-    print(x) # Ford Mustang 2018
+print(hash.values())
 for x, y in hash.items():
     print(x, y) # brand Ford model Mustang year 2018
 if "model" in hash:
@@ -34,13 +33,21 @@ print(hash) # {}
 print()
 
 
+# How to turn a sequence data type into a hash_counter as efficiently as possible
 
-def my_function(s):
-    my_hash = {}
-    for i in s:
-        my_hash[i] = 1 + my_hash.get(i, 0)
-    return my_hash.get("a")
-    
+# Sequence data:
+arr = ["String", "String", 1, 2, 3, 3, 2, 1, 3, 55, "Different String",]
 
-my_string = "abcdefghijklmnopqrrstuvvauxyz"
-print(my_function(my_string))
+# Create an empty hash:
+hash = {}
+
+# Iterate through the sequence data:
+for el in arr:
+    # Since we can't make the default value 0 and use += 1 like Ruby, we must be
+    # much more explicit.
+    hash[el] = 1 + hash.get(el, 0) 
+    # This says that we want to set the value with the key hash[el]
+    # to be 1 + whatever the current value is, AND if there is no current value
+    # yet, than set it to 0.
+print(hash)
+
