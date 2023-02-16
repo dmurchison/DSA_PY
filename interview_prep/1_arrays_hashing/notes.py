@@ -60,3 +60,35 @@ print(Solution().is_anagram_slow("ab", "a")) # False
 print(Solution().is_anagram_slow("aacc", "ccac")) # False
 print(Solution().is_anagram_slow("racecar", "racecar")) # True
 print()
+
+
+
+
+class Solution:
+    def right_side_list(self, arr: list) -> list:
+        rightMax = -1
+        for i in range(len(arr) - 1, -1, -1):
+            newMax = max(rightMax, arr[i])
+            arr[i] = rightMax
+            rightMax = newMax
+        return arr
+
+
+print(Solution().right_side_list([1,12,3,5,-5,2])) # [12,5,5,2,2,-1]
+print(Solution().right_side_list([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8,-1]
+print()
+
+
+class Solution:
+    def two_sum(self, nums: list, target: int) -> list:
+        myMap = {}
+        for i, el in enumerate(nums):
+            diff = target - el
+            if diff in myMap:
+                return [myMap[diff], i]
+            myMap[el] = i
+
+
+print(Solution().two_sum([1,2,2,5,8], 6)) # [0,3]
+print(Solution().two_sum([4,2,9,6,3], 12)) # [2,4]
+print()
