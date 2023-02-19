@@ -2,6 +2,14 @@ from typing import List
 
 
 # EASY PROBLEMS
+class Solution:
+    def contains_duplicate(self, nums: list) -> list:
+        mySet = ()
+        for i in nums:
+            for i in mySet:
+                return True
+            return False
+
 
 
 # Contains Duplicate
