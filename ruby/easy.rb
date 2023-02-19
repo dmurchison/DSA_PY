@@ -26,12 +26,28 @@ class Solution
     return hashS == hashT
   end
 
+
+  def self.right_side(nums)
+    rightMax = -1
+    i = nums.length - 1
+    while i >= 0
+      newMax = [rightMax, nums[i]].max
+      nums[i] = rightMax
+      rightMax = newMax
+      i -= 1
+    end
+    return nums
+  end
+
 end
 
 
 
 p Solution.contains_duplicate([1,2,3,4,3,55]) # true
-
+puts
 
 p Solution.is_anagram("racecar", "rcaegmxss") # false
 p Solution.is_anagram("anagram", "nagaram") # true
+puts
+
+p Solution.right_side([12,22,4,1,8,6,5]) 
