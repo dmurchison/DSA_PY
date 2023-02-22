@@ -14,7 +14,7 @@ def max_value(nums):
       max = num
   return max
 
-print(max_value([4,7,2,8,10,9])) # -> 10
+print(max_value([4,7,2,8,10,9])) # -> 10``
 
 
 def is_prime(n):

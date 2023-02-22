@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Solution
 
   def self.contains_duplicate(nums)
@@ -21,6 +23,7 @@ class Solution
     while i < s.length
       hashS[s[i]] += 1
       hashT[t[i]] += 1
+      debugger
       i += 1
     end
     return hashS == hashT
@@ -40,6 +43,22 @@ class Solution
   end
 
 end
+
+def prime_nums(n)
+  if n < 2
+    return false
+  end
+  (2...n).each do |i|
+    if i % n == 0
+      return false
+    end
+  end
+  return true
+end
+
+p prime_nums(2) # true
+p prime_nums(3) # true
+p prime_nums(4) # false
 
 
 
