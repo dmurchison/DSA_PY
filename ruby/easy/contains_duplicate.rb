@@ -1,20 +1,18 @@
-# CONTAINS DUPLICATE:
-# Given an array of integers, find if the array contains any duplicates.
+require 'set'
 
-require "set"
 class Solution
+  def initialize(nums)
+    @nums = nums
+  end
   def contains_duplicate(nums)
-    mySet = Set.new
-    nums.each do |el|
-      return true if mySet.include?(el)
-      mySet.add(el)
+    nums.each do |num|
+      my_set = Set.new
+      return true if my_set.include?(num)
     end
-    return false
+    reutrn false
   end
 end
 
-a = Solution.new
-p a.contains_duplicate([1,2,3,4,2])
-p a.contains_duplicate([1,2,3,4])
-
+s = Solution.new([1,2,3,4,5,6,7,8,9,10])
+s.contains_duplicate
 
