@@ -1,72 +1,64 @@
-require 'byebug'
+# frozen_string_literal: true
 
+# class Solution
 class Solution
 
   def self.contains_duplicate(nums)
     hash = Hash.new(0)
     nums.each do |el|
-      if hash.key?(el)
-        return true
-      end
+      return true if hash.key?(el)
+
       hash[el] += 1
     end
     false
   end
 
-  def self.is_anagram(s, t)
-    if s.length != t.length
-      return false
-    end
-    hashS = Hash.new(0)
-    hashT = Hash.new(0)
+  def self.anagram?(s, t)
+    return false if s.length != t.length
+
+    hash_s = Hash.new(0)
+    hash_t = Hash.new(0)
     i = 0
     while i < s.length
-      hashS[s[i]] += 1
-      hashT[t[i]] += 1
-      debugger
+      hash_s[s[i]] += 1
+      hash_t[t[i]] += 1
       i += 1
     end
-    return hashS == hashT
+    hash_s == hash_t
   end
 
-
   def self.right_side(nums)
-    rightMax = -1
+    right_max = -1
     i = nums.length - 1
     while i >= 0
-      newMax = [rightMax, nums[i]].max
-      nums[i] = rightMax
-      rightMax = newMax
+      new_max = [right_max, nums[i]].max
+      nums[i] = right_max
+      right_max = new_max
       i -= 1
     end
-    return nums
+    nums
   end
 
 end
 
 def prime_nums(n)
-  if n < 2
-    return false
-  end
+  return false if n < 2
+
   (2...n).each do |i|
-    if i % n == 0
-      return false
-    end
+    return false if i % n == 0
   end
-  return true
+  true
 end
 
 p prime_nums(2) # true
 p prime_nums(3) # true
 p prime_nums(4) # false
-
-
-
-p Solution.contains_duplicate([1,2,3,4,3,55]) # true
+p prime_nums(5) # true
+p Solution.contains_duplicate([1, 2, 3, 4, 3, 55]) # true
 puts
 
-p Solution.is_anagram("racecar", "rcaegmxss") # false
-p Solution.is_anagram("anagram", "nagaram") # true
+p Solution.anagram?("racecar", "rcaegmxss") # false
+p Solution.anagram?("anagram", "nagaram") # true
 puts
 
-p Solution.right_side([12,22,4,1,8,6,5]) 
+p Solution.right_side([12, 22, 4, 1, 8, 6, 5]) # [22,8,8,8,6,5,-1]
