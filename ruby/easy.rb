@@ -13,15 +13,16 @@ class Solution
     false
   end
 
-  def self.anagram?(s, t)
-    return false if s.length != t.length
+  def self.anagram?(str, tst)
+    # binding.irb
+    return false if str.length != tst.length
 
     hash_s = Hash.new(0)
     hash_t = Hash.new(0)
     i = 0
-    while i < s.length
-      hash_s[s[i]] += 1
-      hash_t[t[i]] += 1
+    while i < str.length
+      hash_s[str[i]] += 1
+      hash_t[tst[i]] += 1
       i += 1
     end
     hash_s == hash_t
