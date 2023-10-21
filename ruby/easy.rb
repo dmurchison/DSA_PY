@@ -41,11 +41,11 @@ class Solution
 
 end
 
-def prime_nums(n)
-  return false if n < 2
+def prime_nums(num)
+  return false if num < 2
 
-  (2...n).each do |i|
-    return false if i % n == 0
+  (2...num).each do |i|
+    return false if (i % num).zero?
   end
   true
 end

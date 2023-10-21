@@ -8,7 +8,7 @@ class Animal:
         self.weight = weight
         self._private_weight = 50
         self.__very_private_weight = 1000
-    
+
     def get_friends(self):
         return self.friends
 
@@ -20,7 +20,7 @@ class Animal:
 
     def get_private(self):
         print(self.__very_private_weight)
-    
+
     def greet(self):
         print("This animal makes no sound")
 
@@ -34,7 +34,7 @@ class Dog(Animal):
         return self.fur_color
 
     @classmethod
-    def greet(self):
+    def greet(cls):
         print("Woof woof")
 
 
