@@ -5,8 +5,6 @@
 # Decorators are used to add functionality to an existing function without modifying the function itself.
 # Decorators are usually called before the definition of a function you want to decorate.
 
-
-
 def response_to_approacher(name, approaching=True):  # This is the decorator function (response_to_approacher)
     def inner_response(func):  # This is the function that will be returned by the decorator (response_to_approacher)
         def wrapper(*args, **kwargs):  # This is the function that will be called instead of the original function (func)
@@ -19,7 +17,6 @@ def response_to_approacher(name, approaching=True):  # This is the decorator fun
 
         return wrapper  # This is the function that will be called instead of the original function (func)
     return inner_response  # This is the function that will be returned by the decorator (response_to_approacher)
-
 
 
 def print_hello(func):
@@ -38,5 +35,4 @@ def make_sound(sound):  # This is the function that will be decorated (make_soun
 
 return_val = make_sound("Woof")
 print("return_val:", return_val)
-
-
+print("make_sound.__name__:", make_sound.__name__)
