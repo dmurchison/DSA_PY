@@ -21,7 +21,7 @@
     # The constructor also sets a method called greet. This method prints out "This animal makes no sound".
     # This is a simple class in Python.
 
-class Animal:
+class AnimalClass:
     friends = ['Clark', 'Frank', 'Jessica']
 
     def __init__(self, height=100, weight=100):
@@ -59,7 +59,7 @@ class Animal:
     # The constructor also sets a class variable called friends.
     # This class variable is shared by all instances of the class.
 
-class Dog(Animal):
+class Dog(AnimalClass):
     def __init__(self, height, weight, fur_color):
         self.fur_color = fur_color
         super().__init__(height=height, weight=weight)
