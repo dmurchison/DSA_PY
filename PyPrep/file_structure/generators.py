@@ -1,4 +1,4 @@
-import os 
+import os
 
 def populate_file(filename):
     values_to_write = ["Hello", "World", "This", "Is", "A", "Test"]
