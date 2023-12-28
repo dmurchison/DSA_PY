@@ -1,5 +1,4 @@
 import pytest
-from data_structures.classes.animal_class import AnimalClass
 
 @pytest.mark.describe('AnimalClass')
 class TestAnimalClass:

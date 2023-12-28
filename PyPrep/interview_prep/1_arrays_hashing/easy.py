@@ -2,16 +2,16 @@ from typing import List
 
 
 # EASY PROBLEMS
-class Solution:
+class DuplicateSolution:
     def contains_duplicate(self, nums: list) -> list:
-        len(nums) != len(set(nums))
+        return len(nums) != len(set(nums)) # type: ignore
 
 
 # Contains Duplicate
-# Given an integer array nums, return true if any value appears at least twice 
+# Given an integer array nums, return true if any value appears at least twice
 # in the array, and return false if every element is distinct.
 
-class Solution:
+class Solution: # type: ignore
     def contains_duplicate(self, nums: List[int]) -> bool:
         # Create an empty set, a set is basically a dictionary without values.
         # The rule of not having any duplicates still applies.
@@ -42,7 +42,7 @@ print()
 # Given two strings s and t , write a function to determine if t is an anagram
 # of s.
 
-class Solution:
+class Solution: # type: ignore
     def is_anagram(self, s: str, t: str) -> bool:
         # First check if s and t strings are the same length.
         if len(s) != len(t):
@@ -71,7 +71,7 @@ print()
 
 
 # Replace Elements with Greatest Element on Right Side
-# Given an array arr, replace every element in that array with the greatest 
+# Given an array arr, replace every element in that array with the greatest
 # element among the elements to its right, and replace the last element with -1.
 # After doing so, return the array.
 
@@ -93,3 +93,4 @@ class Solution:
 print(Solution().right_side_list([1,12,3,5,-5,2])) # [12,5,5,2,2,-1]
 print(Solution().right_side_list([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8,-1]
 
+# This is the same problem as above, but with a different approach.
