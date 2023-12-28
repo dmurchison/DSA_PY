@@ -1,4 +1,8 @@
 import pytest
+<<<<<<< HEAD
+=======
+from classes.animal_class import AnimalClass
+>>>>>>> c2974b01d40dd4792a3abb73033c2928dd92d12c
 
 @pytest.mark.describe('AnimalClass')
 class TestAnimalClass:

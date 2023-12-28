@@ -82,4 +82,3 @@ print("A dog's starting friends are:", Dog.friends)
 sample_dog.friends.append("Jerry")
 
 print(sample_dog.get_friends())
-
