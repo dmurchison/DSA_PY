@@ -3,7 +3,20 @@ from typing import List
 
 # EASY PROBLEMS
 class DuplicateSolution:
+    """
+    Class to check if a list contains duplicate elements.
+    """
+
     def contains_duplicate(self, nums: list) -> list:
+        """
+        Checks if the given list contains duplicate elements.
+
+        Args:
+            nums (list): The list of numbers to check.
+
+        Returns:
+            bool: True if the list contains duplicate elements, False otherwise.
+        """
         return len(nums) != len(set(nums)) # type: ignore
 
 
@@ -11,29 +24,35 @@ class DuplicateSolution:
 # Given an integer array nums, return true if any value appears at least twice
 # in the array, and return false if every element is distinct.
 
-class Solution: # type: ignore
+class Solution1:
+    """
+    Class representing a solution to the problem of checking for duplicates in an array.
+    """
+
     def contains_duplicate(self, nums: List[int]) -> bool:
-        # Create an empty set, a set is basically a dictionary without values.
-        # The rule of not having any duplicates still applies.
+        """
+        Checks whether the given array contains any duplicate elements.
+
+        Args:
+            nums (List[int]): The array of integers to be checked.
+
+        Returns:
+            bool: True if the array contains duplicates, False otherwise.
+        """
         mySet = set()
-        # Iterate through the nums array.
         for i in nums:
-            # Check if the set contains the number already.
             if i in mySet:
-                # Once the set has a duplicate we exit the function by returning True.
                 return True
-            # Still iterating through nums; add each iterable to the set.
             mySet.add(i)
-        # If the loop finishes without returning true, we know there were no duplicates.
         return False
 
 
-print(Solution().contains_duplicate([1,2,3,1])) # True
-print(Solution().contains_duplicate([1,2,3,4])) # False
-print(Solution().contains_duplicate([1,1,1,3,3,4,3,2,4,2])) # True
-print(Solution().contains_duplicate([1,2,3,4,5,6,7,8,9,10])) # False
-print(Solution().contains_duplicate([1,1,1,1,1,1,1,1,1,1])) # True
-print(Solution().contains_duplicate([1,1,2,2])) # True
+print(Solution1().contains_duplicate([1,2,3,1])) # True
+print(Solution1().contains_duplicate([1,2,3,4])) # False
+print(Solution1().contains_duplicate([1,1,1,3,3,4,3,2,4,2])) # True
+print(Solution1().contains_duplicate([1,2,3,4,5,6,7,8,9,10])) # False
+print(Solution1().contains_duplicate([1,1,1,1,1,1,1,1,1,1])) # True
+print(Solution1().contains_duplicate([1,1,2,2])) # True
 print()
 
 
@@ -42,8 +61,22 @@ print()
 # Given two strings s and t , write a function to determine if t is an anagram
 # of s.
 
-class Solution: # type: ignore
+class Solution2:
+    """
+    Class to check if two strings are anagrams of each other.
+    """
+
     def is_anagram(self, s: str, t: str) -> bool:
+        """
+        Check if two strings are anagrams of each other.
+
+        Args:
+            s (str): The first string.
+            t (str): The second string.
+
+        Returns:
+            bool: True if the strings are anagrams, False otherwise.
+        """
         # First check if s and t strings are the same length.
         if len(s) != len(t):
             return False
@@ -60,12 +93,12 @@ class Solution: # type: ignore
         return hashS == hashT
 
 
-print(Solution().is_anagram("anagram", "nagaram")) # True
-print(Solution().is_anagram("rat", "car")) # False
-print(Solution().is_anagram("a", "ab")) # False
-print(Solution().is_anagram("ab", "a")) # False
-print(Solution().is_anagram("aacc", "ccac")) # False
-print(Solution().is_anagram("racecar", "racecar")) # True
+print(Solution2().is_anagram("anagram", "nagaram")) # True
+print(Solution2().is_anagram("rat", "car")) # False
+print(Solution2().is_anagram("a", "ab")) # False
+print(Solution2().is_anagram("ab", "a")) # False
+print(Solution2().is_anagram("aacc", "ccac")) # False
+print(Solution2().is_anagram("racecar", "racecar")) # True
 print()
 
 
@@ -75,7 +108,7 @@ print()
 # element among the elements to its right, and replace the last element with -1.
 # After doing so, return the array.
 
-class Solution:
+class Solution3:
     def right_side_list(self, nums: List[int]) -> List[int]:
         # Set -1 to a variable to be used during the iteration.
         rightMax = -1
@@ -90,7 +123,7 @@ class Solution:
         return nums
 
 
-print(Solution().right_side_list([1,12,3,5,-5,2])) # [12,5,5,2,2,-1]
-print(Solution().right_side_list([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8,-1]
+print(Solution3().right_side_list([1,12,3,5,-5,2])) # [12,5,5,2,2,-1]
+print(Solution3().right_side_list([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8,-1]
 
 # This is the same problem as above, but with a different approach.
