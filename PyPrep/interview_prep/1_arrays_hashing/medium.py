@@ -8,7 +8,20 @@ from typing import List
 # the answer in any order.
 
 class Solution:
+    """
+    Class to group anagrams in a list of strings.
+    """
+
     def group_anagrams(self, strs: List[str]) -> List[List[str]]:
+        """
+        Groups anagrams in a list of strings.
+
+        Args:
+            strs (List[str]): The list of strings.
+
+        Returns:
+            List[List[str]]: The list of grouped anagrams.
+        """
         hash_map = {}
         for s in strs:
             sorted_s = ''.join(sorted(s))
