@@ -127,3 +127,21 @@ print(Solution3().right_side_list([1,12,3,5,-5,2])) # [12,5,5,2,2,-1]
 print(Solution3().right_side_list([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8,-1]
 
 # This is the same problem as above, but with a different approach.
+
+def replaceElements(arr: List[int]) -> List[int]:
+    # Set the last element to -1.
+    arr[-1] = -1
+    # Set the max value to the last element.
+    maxVal = arr[-1]
+    # Iterate backwards through the array.
+    for i in range(len(arr) - 2, -1, -1):
+        # Set the current element to the max value.
+        arr[i] = maxVal
+        # Set the max value to the max of the current element and the max value.
+        maxVal = max(arr[i], maxVal)
+    return arr
+
+print(replaceElements([1,12,3,5,-5,2])) # [12,5,5,2,2,-1]
+print(replaceElements([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8,-1]
+print()
+
