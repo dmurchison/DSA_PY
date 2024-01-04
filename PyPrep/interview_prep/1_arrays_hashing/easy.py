@@ -129,6 +129,15 @@ print(Solution3().right_side_list([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8
 # This is the same problem as above, but with a different approach.
 
 def replaceElements(arr: List[int]) -> List[int]:
+    """
+    Replaces each element in the array with the maximum element to its right.
+
+    Args:
+        arr (List[int]): The input array.
+
+    Returns:
+        List[int]: The modified array with each element replaced by the maximum element to its right.
+    """
     # Set the last element to -1.
     arr[-1] = -1
     # Set the max value to the last element.
