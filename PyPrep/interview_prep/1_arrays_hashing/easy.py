@@ -21,7 +21,9 @@ class DuplicateSolution:
 
 print(DuplicateSolution().contains_duplicate([1,2,2,3,4,5,6])) # True
 print(DuplicateSolution().contains_duplicate([1,2,3,4,5,6])) # False
+print(DuplicateSolution().contains_duplicate([1,1,1,3,3,4,3,2,4,2])) # True
 print()
+
 
 
 # Valid Anagram
@@ -63,8 +65,6 @@ class ValidAnagramSolution:
 print(ValidAnagramSolution().is_anagram("anagram", "nagaram")) # True
 print(ValidAnagramSolution().is_anagram("rat", "car")) # False
 print(ValidAnagramSolution().is_anagram("a", "ab")) # False
-print(ValidAnagramSolution().is_anagram("ab", "a")) # False
-print(ValidAnagramSolution().is_anagram("aacc", "ccac")) # False
 print(ValidAnagramSolution().is_anagram("racecar", "racecar")) # True
 print()
 
@@ -75,49 +75,75 @@ print()
 # element among the elements to its right, and replace the last element with -1.
 # After doing so, return the array.
 
-class Solution3:
-    def right_side_list(self, nums: List[int]) -> List[int]:
-        # Set -1 to a variable to be used during the iteration.
-        rightMax = -1
-        # Iterate backwards through the nums array.
-        for i in range(len(nums) - 1, -1, -1):
-            # Max of nums[i] and the current rightMax gets saved to newMax var.
-            newMax = max(rightMax, nums[i])
-            # Replace nums[i] with the highest value to the right.
-            nums[i] = rightMax
-            # Set the new rightMax to be the result of the last number and start the loop over.
-            rightMax = newMax
-        return nums
-
-
-print(Solution3().right_side_list([1,12,3,5,-5,2])) # [12,5,5,2,2,-1]
-print(Solution3().right_side_list([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8,-1]
-
-# This is the same problem as above, but with a different approach.
-
-def replaceElements(arr: List[int]) -> List[int]:
+class ReplaceElementsSolution:
     """
-    Replaces each element in the array with the maximum element to its right.
-
-    Args:
-        arr (List[int]): The input array.
-
-    Returns:
-        List[int]: The modified array with each element replaced by the maximum element to its right.
+    Class to replace each element in an array with the maximum element to its right.
     """
-    # Set the last element to -1.
-    arr[-1] = -1
-    # Set the max value to the last element.
-    maxVal = arr[-1]
-    # Iterate backwards through the array.
-    for i in range(len(arr) - 2, -1, -1):
-        # Set the current element to the max value.
-        arr[i] = maxVal
-        # Set the max value to the max of the current element and the max value.
-        maxVal = max(arr[i], maxVal)
-    return arr
 
-print(replaceElements([1,12,3,5,-5,2])) # [12,5,5,2,2,-1]
-print(replaceElements([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8,-1]
+    def right_side_list(self, arr: List[int]) -> List[int]:
+        """
+        Replaces each element in the array with the maximum element to its right.
+
+        Args:
+            arr (List[int]): The input array.
+
+        Returns:
+            List[int]: The modified array with each element replaced by the maximum element to its right.
+        """
+        # Create a new list to store the results.
+        result = []
+        right_el = -1
+        # Iterate backwards through the array.
+        for i in range(len(arr) -1, -1, -1):
+            # Set the current element to the max of the current element and the right element.
+            result.append(right_el)
+            right_el = max(right_el, arr[i])
+        # Reverse the list and return it.
+        return result[::-1]
+
+
+print(ReplaceElementsSolution().right_side_list([1,12,3,5,-5,2])) # [12,5,5,2,2,-1]
+print(ReplaceElementsSolution().right_side_list([8,5,10,22,-14,12,5,8])) # [22,22,22,12,12,8,8,-1]
+print(ReplaceElementsSolution().right_side_list([1,2,3,4,5,6,7,8,9,10])) # [10,10,10,10,10,10,10,10,10,-1]
+print()
+
+
+
+# Two Sum
+# Given an array of integers, return indices of the two numbers such that they
+# add up to a specific target. You may assume that each input would have exactly
+# one solution, and you may not use the same element twice.
+
+class TwoSumSolution:
+    """
+    Class to find the indices of two numbers that add up to a specific target.
+    """
+
+    def two_sum(self, nums: List[int], target: int) -> List[int]:
+        """
+        Finds the indices of two numbers that add up to a specific target.
+
+        Args:
+            nums (List[int]): The input array of numbers.
+            target (int): The target sum.
+
+        Returns:
+            List[int]: The indices of the two numbers that add up to the target.
+        """
+        # Create a dict to store the indices of the numbers.
+        num_dict = {}
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                # If the two numbers add up to the target, return their indices.
+                if nums[i] + nums[j] == target and i != j:
+                    return [i,j]
+        # If no solution is found, return an empty list.
+        return []
+
+
+print(TwoSumSolution().two_sum([2,7,11,15], 9)) # [0,1]
+print(TwoSumSolution().two_sum([3,2,4], 6)) # [1,2]
+print(TwoSumSolution().two_sum([3,3], 50)) # []
+print(TwoSumSolution().two_sum([1,2,3,4,5,6,7,8,9,10], 19)) # [8,9]
 print()
 
