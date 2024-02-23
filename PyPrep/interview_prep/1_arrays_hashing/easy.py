@@ -130,8 +130,6 @@ class TwoSumSolution:
         Returns:
             List[int]: The indices of the two numbers that add up to the target.
         """
-        # Create a dict to store the indices of the numbers.
-        num_dict = {}
         for i in range(len(nums)):
             for j in range(len(nums)):
                 # If the two numbers add up to the target, return their indices.
@@ -143,7 +141,8 @@ class TwoSumSolution:
 
 print(TwoSumSolution().two_sum([2,7,11,15], 9)) # [0,1]
 print(TwoSumSolution().two_sum([3,2,4], 6)) # [1,2]
-print(TwoSumSolution().two_sum([3,3], 50)) # []
+print(TwoSumSolution().two_sum([3,3], 6)) # []
 print(TwoSumSolution().two_sum([1,2,3,4,5,6,7,8,9,10], 19)) # [8,9]
+print(TwoSumSolution().two_sum([1,2,3,4,5,6,7,8,9,10], 20)) # []
 print()
 
