@@ -7,7 +7,7 @@ class DuplicateSolution:
     Class to check if a list contains duplicate elements.
     """
 
-    def contains_duplicate(self, nums: list) -> list:
+    def contains_duplicate(self, nums: list) -> bool:
         """
         Checks if the given list contains duplicate elements.
 
@@ -17,51 +17,20 @@ class DuplicateSolution:
         Returns:
             bool: True if the list contains duplicate elements, False otherwise.
         """
-        return len(nums) != len(set(nums)) # type: ignore
+        return len(nums) != len(set(nums))
 
-
-# Contains Duplicate
-# Given an integer array nums, return true if any value appears at least twice
-# in the array, and return false if every element is distinct.
-
-class Solution1:
-    """
-    Class representing a solution to the problem of checking for duplicates in an array.
-    """
-
-    def contains_duplicate(self, nums: List[int]) -> bool:
-        """
-        Checks whether the given array contains any duplicate elements.
-
-        Args:
-            nums (List[int]): The array of integers to be checked.
-
-        Returns:
-            bool: True if the array contains duplicates, False otherwise.
-        """
-        mySet = set()
-        for i in nums:
-            if i in mySet:
-                return True
-            mySet.add(i)
-        return False
-
-
-print(Solution1().contains_duplicate([1,2,3,1])) # True
-print(Solution1().contains_duplicate([1,2,3,4])) # False
-print(Solution1().contains_duplicate([1,1,1,3,3,4,3,2,4,2])) # True
-print(Solution1().contains_duplicate([1,2,3,4,5,6,7,8,9,10])) # False
-print(Solution1().contains_duplicate([1,1,1,1,1,1,1,1,1,1])) # True
-print(Solution1().contains_duplicate([1,1,2,2])) # True
+print(DuplicateSolution().contains_duplicate([1,2,2,3,4,5,6])) # True
+print(DuplicateSolution().contains_duplicate([1,2,3,4,5,6])) # False
 print()
-
 
 
 # Valid Anagram
 # Given two strings s and t , write a function to determine if t is an anagram
-# of s.
+# of s. An anagram is when the two strings can be written using the exact same
+# letters (so you can just rearrange the letters to get a different phrase or
+# word).
 
-class Solution2:
+class ValidAnagramSolution:
     """
     Class to check if two strings are anagrams of each other.
     """
@@ -77,28 +46,26 @@ class Solution2:
         Returns:
             bool: True if the strings are anagrams, False otherwise.
         """
-        # First check if s and t strings are the same length.
+        # If the length of th strings are not equal, they cannot be anagrams.
         if len(s) != len(t):
             return False
-        # Create two hashes to represent each string.
-        hashS, hashT = {}, {}
-
-        # Add values to the hashes by iterating through the length of the strings
-        # and incrementing the values by 1.
+        # Now that we know the strings are the same length, we can create dicts
+        # to store the counts of each character in the strings.
+        s_dict = {}
+        t_dict = {}
+        # Iterate through the strings and add the counts to the dicts.
         for i in range(len(s)):
-            # Set the value of the current key to 1 + the original value of that key
-            hashS[s[i]] = 1 + hashS.get(s[i], 0)
-            hashT[t[i]] = 1 + hashT.get(t[i], 0)
-        # Now that we have two hash_counters representing each string, return this boolean.
-        return hashS == hashT
+            s_dict[s[i]] = s_dict.get(s[i], 0) + 1
+            t_dict[t[i]] = t_dict.get(t[i], 0) + 1
+        return s_dict == t_dict
 
 
-print(Solution2().is_anagram("anagram", "nagaram")) # True
-print(Solution2().is_anagram("rat", "car")) # False
-print(Solution2().is_anagram("a", "ab")) # False
-print(Solution2().is_anagram("ab", "a")) # False
-print(Solution2().is_anagram("aacc", "ccac")) # False
-print(Solution2().is_anagram("racecar", "racecar")) # True
+print(ValidAnagramSolution().is_anagram("anagram", "nagaram")) # True
+print(ValidAnagramSolution().is_anagram("rat", "car")) # False
+print(ValidAnagramSolution().is_anagram("a", "ab")) # False
+print(ValidAnagramSolution().is_anagram("ab", "a")) # False
+print(ValidAnagramSolution().is_anagram("aacc", "ccac")) # False
+print(ValidAnagramSolution().is_anagram("racecar", "racecar")) # True
 print()
 
 

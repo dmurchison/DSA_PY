@@ -1,5 +1,5 @@
 # LIST
-# A list is a collection which is ordered and changeable. 
+# A list is a collection which is ordered and changeable.
 # Allows duplicate members.
 list = ["apple", "banana", "cherry"]
 print(list[1]) # banana
