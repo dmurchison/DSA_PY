@@ -1,7 +1,7 @@
 from typing import List
 
+# Easy Array Hashing Problems
 
-# EASY PROBLEMS
 class DuplicateSolution:
     """
     Class to check if a list contains duplicate elements.
