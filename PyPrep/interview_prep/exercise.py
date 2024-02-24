@@ -27,4 +27,22 @@ friends = [
 ]
 print(map_by_name(pets))  # ['Rolo', 'Sunny', 'Saki', 'Finn']
 print(map_by_name(friends))  # ['Alice', 'Bob', 'Charlie']
+print()
 
+
+# Map by key
+# Write a function that takes in an array of hashes and a key name and returns a new
+# array containing the value of each hash for the given key.
+
+def map_by_key(arr, key) -> list:
+    """
+    Given an array of hashes and a key name, return a new array containing the value of each hash for the given key.
+    """
+    return [i[key] for i in arr]
+
+locations = [
+    {"city": "New York City", "state": "New York", "coast": "East"},
+    {"city": "San Francisco", "state": "California", "coast": "West"},
+    {"city": "Portland", "state": "Oregon", "coast": "West"}
+]
+print(map_by_key(locations, "city"))  # ['New York City', 'San Francisco', 'Portland']
