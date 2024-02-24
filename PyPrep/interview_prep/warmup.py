@@ -49,3 +49,6 @@ print()
 print(Challenge().product_array([2,5,7,4,11,1,1,3])) # [4620, 1848, 1320, 2310, 840, 9240, 9240, 3080]
 print(Challenge().product_array([1,2,3,4])) # [24,12,8,6]
 print(Challenge().product_array([21,-2,30,4])) # [-240,2520,-168,-1260]
+
+
+
