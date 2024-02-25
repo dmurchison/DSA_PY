@@ -4,6 +4,9 @@
 # Write a function that takes in an array of hashes and returns a new array
 # containing the "name" of each hash.
 
+import array
+
+
 def map_by_name(arr) -> list[str]:
     """
     Given an array of hashes, return a new array containing the "name" of each hash.
@@ -77,3 +80,20 @@ sentence2 = "I love Python"
 print(yell_sentence(sentence1)) # HELLO! WORLD!
 print(yell_sentence(sentence2)) # I! LOVE! PYTHON!
 print()
+
+
+# Write a method whisper_words that takes in an array of words and returns a
+# new array containing a whispered version of each word. See the examples.
+
+def whisper_words(arr) -> list:
+    """
+    Return a new array that contains the same words all lowercase and followed by ...
+    """
+    final_arr = []
+    for str in arr:
+        final_arr.append(str.lower() + "...")
+    return final_arr
+
+
+
+print(whisper_words(["KEEP", "The", "NOISE", "DOwn"]))
