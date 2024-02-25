@@ -37,4 +37,6 @@ for i in range(5):
         print(i, j)
 
 
-s = "racecar"
+s = "racecar bros"
+n = s.upper()
+print("!".join(n, ))
