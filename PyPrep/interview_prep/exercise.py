@@ -1,3 +1,4 @@
+from operator import le
 from typing import Union
 
 # Exercises
@@ -382,4 +383,89 @@ def summation_sequence(start: int, length: int) -> list:
 
 print(summation_sequence(3, 4)) # => [3, 6, 21, 231]
 print(summation_sequence(5, 3)) # => [5, 15, 120]
+print()
+
+
+# Fibonacci
+# The fibonacci sequence is a sequence of numbers whose first and second
+# elements are 1. To generate further elements of the sequence we take the sum
+# of the previous two elements. For example the first 6 fibonacci numbers are
+# 1, 1, 2, 3, 5, 8. Write a method fibonacci that takes in a number length and
+# returns the fibonacci sequence up to the given length.
+
+def fibonacci(length: int) -> list:
+    """
+    Return a list of the fibonacci sequence "length" long.
+    """
+    if length == 0:
+        return []
+    elif length == 1:
+        return [1]
+    seq = [1, 1]
+    while len(seq) < length:
+        seq.append(seq[-1] + seq[-2])
+    return seq
+
+def fibonacci_rec(length):
+    if length <= 0:
+        return []
+    elif length == 1:
+        return [1]
+    elif length == 2:
+        return [1, 1]
+    else:
+        sequence = fibonacci_rec(length - 1)
+        sequence.append(sequence[-1] + sequence[-2])
+        return sequence
+
+print(fibonacci(0)) # => []
+print(fibonacci_rec(0)) # => []
+print(fibonacci(1)) # => [1]
+print(fibonacci_rec(1)) # => [1]
+print(fibonacci(6)) # => [1, 1, 2, 3, 5, 8]
+print(fibonacci_rec(6)) # => [1, 1, 2, 3, 5, 8]
+print(fibonacci(8)) # => [1, 1, 2, 3, 5, 8, 13, 21]
+print(fibonacci_rec(8)) # => [1, 1, 2, 3, 5, 8, 13, 21]
+print()
+
+
+# Caesar Cipher
+# Write a method caesar_cipher that takes in a string and a number. The method
+# should return a new string where every character of the original is shifted
+# num characters in the alphabet.
+
+def caesar_cipher(string: str, num: int) -> str:
+    alph = "abcdefghijklmnopqrstuvwxyz"
+    final_str = ""
+    for char in string:
+        old_idx = alph.index(char)
+        new_idx = old_idx + num
+        new_char = alph[new_idx % len(alph)]
+        final_str += new_char
+    return final_str
+
+print(caesar_cipher("apple", 1)) # -> "bqqmf"
+print(caesar_cipher("bootcamp", 2)) # -> "dqqvecor"
+print(caesar_cipher("zebra", 4)) # -> "difve"
+print()
+
+
+# Vowel Cipher
+# Write a method vowel_cipher that takes in a string and returns a new string
+# where every vowel becomes the next vowel in the alphabet.
+
+def vowel_cipher(string):
+    vowels = "aeiou"
+    new_string = ""
+    for char in string:
+        if char in vowels:
+            vowel_index = vowels.index(char)
+            new_vowel = vowels[(vowel_index + 1) % len(vowels)]
+            new_string += new_vowel
+        else:
+            new_string += char
+    return new_string
+
+print(vowel_cipher("bootcamp")) #=> buutcemp
+print(vowel_cipher("paper cup")) #=> pepir cap
 
