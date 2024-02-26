@@ -1,5 +1,8 @@
 from typing import Union
+
 # Exercises
+
+
 
 # Map by name
 # Write a function that takes in an array of hashes and returns a new array
@@ -7,7 +10,8 @@ from typing import Union
 
 def map_by_name(arr) -> list[str]:
     """
-    Given an array of hashes, return a new array containing the "name" of each hash.
+    Given an array of hashes, return a new array containing the "name" of each
+    hash.
     """
     # Create an array to store the names
     names = []
@@ -97,9 +101,8 @@ def whisper_words(arr) -> list:
     return final_arr
 
 
-
 print(whisper_words(["KEEP", "The", "NOISE", "DOwn"])) # -> ["keep..", "the...", "noise...", "down..."]
-print(whisper_words(["WHAT", "IS", "that", "nOIse?"])) # ->  ["what...", "is...", "that...", "noise?..."]
+print(whisper_words(["WHAT", "IS", "that", "nOIse?"])) # -> ["what...", "is...", "that...", "noise?..."]
 print()
 
 
@@ -123,10 +126,11 @@ def o_words(sent) -> list:
         return ["This sentence does not contain any o's"]
     return final_arr
 
-print(o_words(sentence1)) # ['Hello', 'World']
-print(o_words(sentence2)) # ['love', 'Python']
-print(o_words("nOthing is that great")) # ['nOthing']
-print(o_words("This is great")) # ["This sentence does not contain any o's"]
+
+print(o_words(sentence1)) # -> ['Hello', 'World']
+print(o_words(sentence2)) # -> ['love', 'Python']
+print(o_words("nOthing is that great")) # -> ['nOthing']
+print(o_words("This is great")) # -> ["This sentence does not contain any o's"]
 print()
 
 
@@ -145,11 +149,11 @@ def last_index(string: str, char: str) -> Union[str, int]:
             return i
     return f"The string '{string}' does not include an '{char}'"
 
-print(last_index("Hellooo", "R")) # The string "Helloooo" does not contain any "R"
-print(last_index("abca", "A")) # 3
-print(last_index("mississipi", "i")) #  9
-print(last_index("octagon", "o")) #=> 5
-print(last_index("programming", "m")) #=> 7
+print(last_index("Hellooo", "R")) # -> The string "Helloooo" does not contain any "R"
+print(last_index("abca", "A")) # -> 3
+print(last_index("mississipi", "i")) # -> 9
+print(last_index("octagon", "o")) # -> 5
+print(last_index("programming", "m")) # -> 7
 print()
 
 
@@ -212,14 +216,14 @@ def prime_checker(num) -> bool:
     return True
 
 
-
-print(prime_checker(2)) #=> true
-print(prime_checker(5)) #=> true
-print(prime_checker(11)) #=> true
-print(prime_checker(4)) #=> false
-print(prime_checker(9)) #=> false
-print(prime_checker(-5)) #=> false
+print(prime_checker(2)) # -> True
+print(prime_checker(5)) # -> True
+print(prime_checker(11)) # -> True
+print(prime_checker(4)) # -> False
+print(prime_checker(9)) # -> False
+print(prime_checker(-5)) # -> False
 print()
+
 
 
 # Prime Numbers
@@ -236,6 +240,7 @@ def prime_nums(numbers) -> list:
         if prime_checker(num):
             primes.append(num)
     return primes
+
 
 print(prime_nums([1,2,3,4,5,6,7])) # -> [1,2,3,5,7]
 print(prime_nums([-3,-1,5,6,7,8,9])) # -> [5,7]
@@ -283,8 +288,6 @@ def greatest_factor(num) -> int:
             factors.append(n)
     return max(factors)
 
-print(greatest_factor(16))
-
 def greatest_factor_arr(arr) -> list:
     """
     Return greatest factor of every even number, and if the number is odd just
@@ -298,8 +301,85 @@ def greatest_factor_arr(arr) -> list:
             final_arr.append(el)
     return final_arr
 
+
+print(greatest_factor(16)) # -> 8
 print(greatest_factor_arr([16, 7, 9, 14])) # -> [8, 7, 9, 7]
 print(greatest_factor_arr([30, 3, 24, 21, 10])) # -> [15, 3, 12, 21, 5]
 print()
 
+
+
+# Perfect Square
+# Write a method perfect_square? that takes in a number and returns a boolean
+# indicating whether it is a perfect square. A perfect square is a number that
+# results from multiplying a number by itself. For example, 9 is a perfect
+# square because 3 * 3 = 9, 25 is a perfect square because 5 * 5 = 25.
+
+def perfect_square(num) -> bool:
+    """
+    Return a bool indicating whether or not the input is a perfect square
+    """
+    res = False
+    for n in range(1, num):
+        if n * n == num:
+            res = True
+    return res
+
+
+print(perfect_square(5)) # => False
+print(perfect_square(12)) # => False
+print(perfect_square(30)) # => False
+print(perfect_square(9)) # => True
+print(perfect_square(25)) # -> True
+
+
+
+# Triple Sequence
+# Write a method triple_sequence that takes in two numbers, start and length.
+# The method should return an array representing a sequence that begins with
+# start and is length elements long. In the sequence, every element should be 3
+# times the previous element. Assume that the length is at least 1.
+
+def triple_sequence(start_num: int, finish_length: int) -> list:
+    """
+    Given two integers, return an array that has a length of int2 and a starting
+    element of int1. Every consecutive element should be 3x the previous.
+    """
+    # Create an array to append the new elements to.
+    seq = [start_num]
+    # Use a while loop to continue adding elements to the array while the length
+    # is less than the finishing_length
+    while len(seq) < finish_length:
+        seq.append(seq[-1] * 3)
+    return seq
+
+
+print(triple_sequence(2, 4)) # -> [2, 6, 18, 54]
+print(triple_sequence(4, 5)) # -> [4, 12, 36, 108, 324]
+print()
+
+
+# Summation Sequence
+# A number's summation is the sum of all positive numbers less than or equal to
+# the number. For example: the summation of 3 is 6 because 1 + 2 + 3 = 6, the
+# summation of 6 is 21 because 1 + 2 + 3 + 4 + 5 + 6 = 21. Write a method
+# summation_sequence that takes in a two numbers: start and length. The method
+# should return an array containing length total elements. The first number of
+# the sequence should be the start number. At any point, to generate the next
+# element of the sequence we take the summation of the previous element. You can
+# assume that length is not zero.
+
+def summation_sequence(start: int, length: int) -> list:
+    """
+    Use summation seq to return a list that is "length" long and starts with
+    "start"
+    """
+    seq = [start]
+    while len(seq) < length:
+        seq.append(sum(range(seq[-1] + 1)))
+    return seq
+
+
+print(summation_sequence(3, 4)) # => [3, 6, 21, 231]
+print(summation_sequence(5, 3)) # => [5, 15, 120]
 
