@@ -219,5 +219,53 @@ print(prime_checker(11)) #=> true
 print(prime_checker(4)) #=> false
 print(prime_checker(9)) #=> false
 print(prime_checker(-5)) #=> false
+print()
+
+
+# Prime Numbers
+# Write a method pick_primes that takes in an array of numbers and returns a new
+# array containing only the prime numbers.
+
+def prime_nums(numbers) -> list:
+    """
+    Write a method pick_primes that takes in an array of numbers and returns a
+    new array containing only the prime numbers.
+    """
+    primes = []
+    for num in numbers:
+        if prime_checker(num):
+            primes.append(num)
+    return primes
+
+print(prime_nums([1,2,3,4,5,6,7])) # -> [1,2,3,5,7]
+print(prime_nums([-3,-1,5,6,7,8,9])) # -> [5,7]
+print(prime_nums([6,7,8,9,10,11,12])) # -> [7,11]
+print(prime_nums([13,14,15,16])) # -> [13]
+print(prime_nums([4,6,8,14,15])) # -> []
+print()
+
+
+
+# Prime Factors
+# Write a method prime_factors that takes in a number and returns an array
+# containing all of the prime factors of the given number.
+
+def prime_factors(num) -> list:
+    """
+    Write a method prime_factors that takes in a number and returns an array
+    containing all of the prime factors of the given number.
+    """
+    # Find the factors and iterate to find the primes.
+    factors = []
+    for n in range(2, num+1):
+        if num % n == 0:
+            factors.append(n)
+    return prime_nums(factors)
+
+
+print(prime_factors(24)) # -> [2,3]
+print(prime_factors(60)) # -> [2,3,5]
+print(prime_factors(170)) # -> [2,5,17]
+print()
 
 
