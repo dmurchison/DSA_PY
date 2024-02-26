@@ -41,5 +41,5 @@ s = "racecar bros"
 n = s.upper()
 print("!".join(n, ))
 
-for i in range(-5):
+for i in reversed(range(1,5+1)):
     print(i)

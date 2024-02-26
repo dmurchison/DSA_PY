@@ -269,3 +269,37 @@ print(prime_factors(170)) # -> [2,5,17]
 print()
 
 
+
+# Greatest Factor Array
+# Write a method greatest_factor_array that takes in an array of numbers and
+# returns a new array where every even number is replaced with it's greatest
+# factor. A greatest factor is the largest number that divides another with no
+# remainder. For example the greatest factor of 16 is 8.
+
+def greatest_factor(num) -> int:
+    factors = []
+    for n in range(1, num):
+        if num % n == 0:
+            factors.append(n)
+    return max(factors)
+
+print(greatest_factor(16))
+
+def greatest_factor_arr(arr) -> list:
+    """
+    Return greatest factor of every even number, and if the number is odd just
+    add it to the new array
+    """
+    final_arr = []
+    for el in arr:
+        if el % 2 == 0:
+            final_arr.append(greatest_factor(el))
+        else:
+            final_arr.append(el)
+    return final_arr
+
+print(greatest_factor_arr([16, 7, 9, 14])) # -> [8, 7, 9, 7]
+print(greatest_factor_arr([30, 3, 24, 21, 10])) # -> [15, 3, 12, 21, 5]
+print()
+
+
