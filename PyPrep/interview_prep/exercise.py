@@ -199,7 +199,7 @@ print()
 # Write a method prime? that takes in a number and returns a boolean, indicating
 # whether the number is prime. A prime number is only divisible by 1 and itself.
 
-def prime_num(num) -> bool:
+def prime_checker(num) -> bool:
     """
     Given an integer, return a boolean indicating whether or not the number is
     prime.
@@ -213,9 +213,11 @@ def prime_num(num) -> bool:
 
 
 
-print(prime_num(2)) #=> true
-print(prime_num(5)) #=> true
-print(prime_num(11)) #=> true
-print(prime_num(4)) #=> false
-print(prime_num(9)) #=> false
-print(prime_num(-5)) #=> false
+print(prime_checker(2)) #=> true
+print(prime_checker(5)) #=> true
+print(prime_checker(11)) #=> true
+print(prime_checker(4)) #=> false
+print(prime_checker(9)) #=> false
+print(prime_checker(-5)) #=> false
+
+
