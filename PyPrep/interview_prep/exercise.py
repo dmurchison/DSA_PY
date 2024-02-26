@@ -4,9 +4,6 @@
 # Write a function that takes in an array of hashes and returns a new array
 # containing the "name" of each hash.
 
-import array
-
-
 def map_by_name(arr) -> list[str]:
     """
     Given an array of hashes, return a new array containing the "name" of each hash.
@@ -41,7 +38,8 @@ print()
 
 def map_by_key(arr, key) -> list:
     """
-    Given an array of hashes and a key name, return a new array containing the value of each hash for the given key.
+    Given an array of hashes and a key name, return a new array containing the
+    value of each hash for the given key.
     """
     return [i[key] for i in arr]
 
@@ -64,7 +62,8 @@ print()
 
 def yell_sentence(sent) -> str:
     """
-    Given a sentence string return a new sentence where every word is capitalized and followed by an exclamation point.
+    Given a sentence string return a new sentence where every word is
+    capitalized and followed by an exclamation point.
     """
     # First, split the sentence into words
     words = sent.split()
@@ -82,12 +81,14 @@ print(yell_sentence(sentence2)) # I! LOVE! PYTHON!
 print()
 
 
+
 # Write a method whisper_words that takes in an array of words and returns a
 # new array containing a whispered version of each word. See the examples.
 
 def whisper_words(arr) -> list:
     """
-    Return a new array that contains the same words all lowercase and followed by ...
+    Return a new array that contains the same words all lowercase and followed
+    by ...
     """
     final_arr = []
     for str in arr:
@@ -97,3 +98,33 @@ def whisper_words(arr) -> list:
 
 
 print(whisper_words(["KEEP", "The", "NOISE", "DOwn"]))
+print(whisper_words(["WHAT", "IS", "that", "nOIse?"]))
+print()
+
+
+
+# O Words
+# Write a method o_words that takes in a sentence string and returns an array of
+# the words that contain an "o".
+
+def o_words(sent) -> list:
+    """
+    Return an array containing all of the words in the sentence that have a
+    letter "o" in it.
+    """
+    final_arr = []
+    checker = ["o", "O"]
+    words = sent.split()
+    for word in words:
+        if any(el in word for el in checker):
+            final_arr.append(word)
+    if not final_arr:
+        return ["This sentence does not contain any o's"]
+    return final_arr
+
+print(o_words(sentence1)) # ['Hello', 'World']
+print(o_words(sentence2)) # ['love', 'Python']
+print(o_words("nOthing is that great")) # ['nOthing']
+print(o_words("This is great")) # ["This sentence does not contain any o's"]
+print()
+
