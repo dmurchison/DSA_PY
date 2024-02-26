@@ -41,5 +41,7 @@ s = "racecar bros"
 n = s.upper()
 print("!".join(n, ))
 
-for i in reversed(range(1,5+1)):
-    print(i)
+
+st = "the jeep rolled down the hill"
+for i in range(len(st)):
+    print(st[i], st[i+1])
