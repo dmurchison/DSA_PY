@@ -192,3 +192,30 @@ print(most_vowels("what a wonderful life")) # -> ['wonderful']:3
 print(most_vowels("I can't WAIT until we go to NY!")) # -> ['WAIT']:2
 print(most_vowels("SuPEr crowd today")) # -> ['SuPEr', 'today']:2
 print()
+
+
+
+# Prime?
+# Write a method prime? that takes in a number and returns a boolean, indicating
+# whether the number is prime. A prime number is only divisible by 1 and itself.
+
+def prime_num(num) -> bool:
+    """
+    Given an integer, return a boolean indicating whether or not the number is
+    prime.
+    """
+    if num < 1 or num % 1 != 0 or num % num != 0:
+        return False
+    for n in range(2, num):
+        if num % n == 0:
+            return False
+    return True
+
+
+
+print(prime_num(2)) #=> true
+print(prime_num(5)) #=> true
+print(prime_num(11)) #=> true
+print(prime_num(4)) #=> false
+print(prime_num(9)) #=> false
+print(prime_num(-5)) #=> false

@@ -40,3 +40,6 @@ for i in range(5):
 s = "racecar bros"
 n = s.upper()
 print("!".join(n, ))
+
+for i in range(-5):
+    print(i)
