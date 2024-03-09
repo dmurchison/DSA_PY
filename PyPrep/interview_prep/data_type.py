@@ -41,7 +41,12 @@ s = "racecar bros"
 n = s.upper()
 print("!".join(n, ))
 
+def cool_prime(num):
+    for n in range(2, num+1):
+        if num % n == 0:
+            return True
+    return False
 
-st = "the jeep rolled down the hill"
-for i in range(len(st)):
-    print(st[i], st[i+1])
+print(cool_prime(9))
+print(cool_prime(8))
+
