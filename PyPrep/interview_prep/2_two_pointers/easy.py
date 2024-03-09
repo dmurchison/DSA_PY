@@ -28,3 +28,18 @@ print(ValidPalindromeSolution().is_palindrome("racecar"))  # True
 print(ValidPalindromeSolution().is_palindrome("kaYaK"))  # True
 print(ValidPalindromeSolution().is_palindrome("hello"))  # False
 print()
+
+
+class PrimeNumberChecker:
+    def is_prime(self, num: int) -> bool:
+        ans = True
+        for n in range(2, num):
+            if num % n == 0:
+                ans = False
+        return ans
+
+print(PrimeNumberChecker().is_prime(9)) # -> False
+print(PrimeNumberChecker().is_prime(5)) # -> True
+print(PrimeNumberChecker().is_prime(8)) # -> False
+print(PrimeNumberChecker().is_prime(3)) # -> True
+
