@@ -156,20 +156,19 @@ class PrimeNumbersSolution:
         return True
 
 
-    def prime_numbers(self, arr: List[int]) -> List[int]:
+    def prime_numbers(self, arr: List[int]):
         final_arr = []
         for n in range(len(arr)):
-            if PrimeNumbersSolution().prime_number(arr[n]):
-                final_arr.append(n)
+            if self.prime_number(arr[n]):
+                final_arr.append(arr[n])
         return final_arr
-
 
 
 print(PrimeNumbersSolution().prime_number(9)) # -> False
 print(PrimeNumbersSolution().prime_number(5)) # -> True
 print(PrimeNumbersSolution().prime_number(8)) # -> False
 print(PrimeNumbersSolution().prime_number(3)) # -> True
-print()
+print([1,2,3,4,5][4])
 
 print(PrimeNumbersSolution().prime_numbers([1,2,3,4,5,6,7,8,9,10])) # [2,3,5,7]
 print(PrimeNumbersSolution().prime_numbers([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])) # [2,3,5,7,11,13]
