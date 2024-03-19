@@ -82,3 +82,16 @@ print("A dog's starting friends are:", Dog.friends)
 sample_dog.friends.append("Jerry")
 
 print(sample_dog.get_friends())
+print()
+
+l = [1,2,"Hello World",4,5]
+print(l[2])
+def cube_list(array):
+    for el in l:
+        print(el)
+
+print()
+print()
+print(cube_list(l)) # [1, 8, 27, 64, 125]
+
+
