@@ -17,3 +17,5 @@ characters = []
 # Use an empty list characters and a += augmented assignment statement to convert the string 'Birthday' into a list of characters.
 characters += 'Birthday'
 print(characters)
+
+# Commit Sauce
