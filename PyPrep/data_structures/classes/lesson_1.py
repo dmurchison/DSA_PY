@@ -1,21 +1,32 @@
+import time
 
-def cube_list(numbers) -> list[int]:
-    """
-    Returns a list of the cubes of the input numbers.
-
-    Args:
-        numbers (List[int]): The input list of numbers.
-
-    Returns:
-        List[int]: The list of the cubes of the input numbers.
-    """
-    return [num ** 3 for num in numbers]
-
-print(cube_list([1,2,3,4,5,6,7,8,9,10]))
-
-characters = []
 # Use an empty list characters and a += augmented assignment statement to convert the string 'Birthday' into a list of characters.
+characters = []
 characters += 'Birthday'
 print(characters)
 
+
+n = 501
+def prime(n):
+    if n == 1:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
+start_time = time.time()  # start timing
+print(prime(n))  # call your function
+end_time = time.time()  # end timing
+print("Execution time: ", end_time - start_time)  # print the execution time
+
 # Commit Sauce
+
+n = 501
+def prime(n):
+    if n == 1:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
