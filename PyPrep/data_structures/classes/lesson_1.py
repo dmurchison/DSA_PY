@@ -7,7 +7,7 @@ print(characters)
 
 
 n = 501
-def prime(n):
+def prime_rec(n):
     if n == 1:
         return False
     for i in range(2, n):
@@ -16,7 +16,7 @@ def prime(n):
     return True
 
 start_time = time.time()  # start timing
-print(prime(n))  # call your function
+print(prime_rec(n))  # call your function
 end_time = time.time()  # end timing
 print("Execution time: ", end_time - start_time)  # print the execution time
 
