@@ -36,3 +36,5 @@ def make_sound(sound):  # This is the function that will be decorated (make_soun
 return_val = make_sound("Woof")
 print("return_val:", return_val)
 print("make_sound.__name__:", make_sound.__name__)
+
+#  Output:
