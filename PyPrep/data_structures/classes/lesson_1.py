@@ -1,32 +1,20 @@
-import time
+# My Easy Practice Problems...
 
-# Use an empty list characters and a += augmented assignment statement to convert the string 'Birthday' into a list of characters.
-characters = []
-characters += 'Birthday'
-print(characters)
+# Is Even
 
+def is_even(num):
+    """
+    This function checks if a given number is even.
 
-n = 501
-def prime_rec(n):
-    if n == 1:
-        return False
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    return True
+    Args:
+        number: The number to be checked for evenness.
 
-start_time = time.time()  # start timing
-print(prime_rec(n))  # call your function
-end_time = time.time()  # end timing
-print("Execution time: ", end_time - start_time)  # print the execution time
+    Returns:
+        True if the number is even, False otherwise.
+    """
+    return num  % 2 == 0
 
-# Commit Sauce
-
-n = 501
-def prime(n):
-    if n == 1:
-        return False
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    return True
+print(is_even(2))
+print(is_even(1))
+print(is_even(7))
+print(is_even(10))
