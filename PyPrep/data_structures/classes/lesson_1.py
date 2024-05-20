@@ -18,3 +18,25 @@ print(is_even(2))
 print(is_even(1))
 print(is_even(7))
 print(is_even(10))
+
+def gcd(a, b):
+    """
+    This function calculates the greatest common divisor (GCD) of two positive integers.
+
+    Args:
+        a: The first positive integer.
+        b: The second positive integer.
+
+    Returns
+        The greatest common divisor of a and b
+    """
+    if a <= 0 or b <= 0:
+        return None
+    while b != 0:
+        rem = a % b
+        a = b
+        b = rem
+    return (a,b)
+
+print(gcd(15,5))
+
