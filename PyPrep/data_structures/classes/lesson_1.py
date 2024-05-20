@@ -2,6 +2,10 @@
 
 # Is Even
 
+from operator import is_
+from xmlrpc.client import Boolean
+
+
 def is_even(num):
     """
     This function checks if a given number is even.
@@ -40,3 +44,13 @@ def gcd(a, b):
 
 print(gcd(15,5))
 
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(1,num):
+        if num % i == 0:
+            return False
+    return True
+
+print(is_prime(7))
+print(is_prime(8))
