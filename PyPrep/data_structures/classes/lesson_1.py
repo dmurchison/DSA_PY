@@ -44,13 +44,15 @@ def gcd(a, b):
 
 print(gcd(15,5))
 
-def is_prime(num):
-    if num <= 1:
+def prime_number(num):
+    if num < 2:
         return False
-    for i in range(1,num):
-        if num % i == 0:
+    for n in range(2, num):
+        if num % n == 0:
             return False
     return True
 
-print(is_prime(7))
-print(is_prime(8))
+print(prime_number(9)) # -> False
+print(prime_number(5)) # -> True
+print(prime_number(8)) # -> False
+print(prime_number(3)) # -> True
