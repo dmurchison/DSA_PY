@@ -4,3 +4,5 @@
 
 example_list = [1,2,3]
 print(example_list, type(example_list))
+example_list.append("Hello World")
+print(example_list)
