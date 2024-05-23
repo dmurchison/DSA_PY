@@ -17,17 +17,17 @@ print(example_list, type(example_list), len(example_list))
 # word).
 
 class Anagrams:
-    def is_anagram(self, s, t):
+    def is_anagram(self, s: str, t: str):
         if len(s) != len(t):
             return False
         s_hash = {}
         t_hash = {}
         for i in range(len(s)):
             s_hash[s[i]] = s_hash.get(s[i], 0) + 1
-            t_hash[s[i]] = t_hash.get(s[i], 0) + 1
-        print(s_hash, t_hash)
+            t_hash[t[i]] = t_hash.get(t[i], 0) + 1
+        return s_hash == t_hash
 
-print(Anagrams().is_anagram("Hello, NEVAAAA"))
-
+print(Anagrams().is_anagram("Hello", "NEVAA")) # False
+print(Anagrams().is_anagram("anagram", "nagaram")) # True
 
 
