@@ -27,6 +27,8 @@ class Anagrams:
             t_hash[t[i]] = t_hash.get(t[i], 0) + 1
         return s_hash == t_hash
 
+    
+
 print(Anagrams().is_anagram("Hello", "NEVAA")) # False
 print(Anagrams().is_anagram("anagram", "nagaram")) # True
 
