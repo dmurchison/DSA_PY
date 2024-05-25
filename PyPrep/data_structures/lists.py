@@ -28,7 +28,7 @@ class Anagrams:
             t_hash[t[i]] = t_hash.get(t[i], 0) + 1
         return s_hash == t_hash
 
-    
+
 
 print(Anagrams().is_anagram("Hello", "NEVAA")) # False
 print(Anagrams().is_anagram("anagram", "nagaram")) # True
@@ -36,7 +36,7 @@ print()
 
 
 class Primeyz:
-    def is_prime(self, n: int):
+    def is_prime(self, n: int) -> bool:
         if n <= 2:
             return False
         for i in range(2, n):
@@ -44,6 +44,14 @@ class Primeyz:
                 return False
         return True
 
+    def primez(self, nums: list) -> list:
+        final_arr = []
+        for n in nums:
+            if self.is_prime(n):
+                final_arr.append(n)
+        return final_arr
+
+
 print(Primeyz().is_prime(7)) # True
 print(Primeyz().is_prime(8)) # False
-
+print(Primeyz().primez([1,2,3,4,5,6,7,8,9]))
