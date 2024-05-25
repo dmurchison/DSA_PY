@@ -14,7 +14,7 @@ class DuplicateSolution:
 print(DuplicateSolution().contains_dup([1,2,3,3,4,5]))
 print(DuplicateSolution().contains_dup([1,2,3,4,5]))
 
-class Anagram:
+class AnagramSolution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
@@ -24,5 +24,17 @@ class Anagram:
             hash_t[t[i]] = 1 + hash_t.get(t[i], 0)
         return hash_s == hash_t
 
-print(Anagram().isAnagram("anagram", "nagaram"))
+print(AnagramSolution().isAnagram("anagram", "nagaram"))
 
+class TwoSumSolution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """two sum solution
+
+        Args:
+            nums (List[int]): _description_
+            target (int): _description_
+
+        Returns:
+            List[int]: _description_
+        """
+        # make an hashmap 
