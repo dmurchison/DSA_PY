@@ -9,6 +9,7 @@ print(example_list)
 example_list.append("Hello World") # type: ignore
 
 print(example_list, type(example_list), len(example_list))
+print()
 
 # Valid Anagram
 # Given two strings s and t , write a function to determine if t is an anagram
@@ -31,5 +32,26 @@ class Anagrams:
 
 print(Anagrams().is_anagram("Hello", "NEVAA")) # False
 print(Anagrams().is_anagram("anagram", "nagaram")) # True
+print()
 
 
+class Primeyz:
+    def is_prime(self, n: int) -> bool:
+        if n <= 2:
+            return False
+        for i in range(2, n):
+            if n % i == 0:
+                return False
+        return True
+
+    def primez(self, nums: list) -> list:
+        final_arr = []
+        for n in nums:
+            if self.is_prime(n):
+                final_arr.append(n)
+        return final_arr
+
+
+print(Primeyz().is_prime(7)) # True
+print(Primeyz().is_prime(8)) # False
+print(Primeyz().primez([1,2,3,4,5,6,7,8,9]))
