@@ -19,3 +19,4 @@ df22 = df2.groupby('A')
 mean_df = df22.mean()
 
 print(mean_df)
+
